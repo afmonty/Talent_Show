@@ -22,7 +22,7 @@
 
 
 ### Wireframs
-![](./Final Project.bmpr)
+![](./Final Project.pdf)
 
 ### User Stories
 [Talent Show Trello Board](https://trello.com/b/GEqrbgjG/talent-show)
