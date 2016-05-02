@@ -20,12 +20,6 @@ exports.up = function(knex, Promise) {
 			.references('id')
 			.inTable('schools')
 			.onDelete('CASCADE');
-		t.integer('agencyId')
-			.unsigned()
-			.notNull()
-			.references('id')
-			.inTable('agencies')
-			.onDelete('CASCADE');
 	});
 };
 
