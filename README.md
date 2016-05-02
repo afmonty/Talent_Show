@@ -23,7 +23,7 @@ I am using React with Backbone collections and models to create an apllication w
 ![](./talent_show)
 
 
-### Wireframs
+### Wireframes
 [Talent Show wire frames](./Final Project.pdf)
 
 ### User Stories
