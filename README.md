@@ -17,13 +17,14 @@ I am using React with Backbone collections and models to create an apllication w
 * knex
 * bookshelf
 * filestack
+* skeleton
 
 ### Data model
 ![](./talent_show)
 
 
 ### Wireframs
-![Talent Show wire frames](./Final Project.pdf)
+[Talent Show wire frames](./Final Project.pdf)
 
 ### User Stories
 [Talent Show Trello Board](https://trello.com/b/GEqrbgjG/talent-show)
