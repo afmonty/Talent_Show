@@ -5,9 +5,9 @@ exports.up = function(knex, Promise) {
 		t.dateTime('updatedAt').nullable();
 		t.dateTime('deletedAt').nullable();
 
-		t.string('schoolName').notNull();
-		t.string('address').nullable();
-		t.string('address2').nullable();
+		t.string('url').notNull();
+		t.string('description').nullable();
+		t.string('status').notNull();
 		t.integer('userId')
 			.unsigned()
 			.notNull()
