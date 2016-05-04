@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><%= title %></title>
+		<title>Talent Show</title>
 		<link rel="stylesheet" href="<%= env === 'development' ? '/styles/main.scss.css' : '/styles/main.scss.min.css?'+version %>" />
 
 	</head>
 	<body>
-		<h1><%= title %></h1>
-		<p>Welcome to <%= title %></p>
-		<script type="text/javascript" src="<%= env === 'development' ? '/scripts/bundle.js' : '/scripts/bundle.min.js?'+version %>"></script>
+		<div id="app"></div>
 		<script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+		<script type="text/javascript">
+			window.user = <%- user ? JSON.stringify(user) : '{}' %>;
+		</script>
+		<script type="text/javascript" src="<%= env === 'development' ? '/scripts/bundle.js' : '/scripts/bundle.min.js?'+version %>"></script>
+		
 
-		<input type="filepicker" data-fp-apikey="AyvZxLzllQyuCAYDTZxvpz"
-				onchange="alert(event.fpfile.url)">
 	</body>
 </html>

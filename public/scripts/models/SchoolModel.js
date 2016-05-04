@@ -1,6 +1,7 @@
-import Backbone from 'backbone';
+import Backbone from 'Backbone';
 
-export.default.Model.Backbone.extend({
+
+export default Backbone.Model.extend({
 		defaults: {
 		createdAt: null,
 		updatedAt: null,
@@ -9,6 +10,6 @@ export.default.Model.Backbone.extend({
 		address2: '',
 		contact: ''
 	},
-	urlRoot: '/api/schools',
+	urlRoot: '/api/v1/school',
 	idAttribute: 'id'
 });

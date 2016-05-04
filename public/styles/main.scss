@@ -1,3 +1,24 @@
-.blue {
-	background: green;
-}
+@import 'node_modules/rayon/src/styles/rayon';
+
+
+nav{
+	overflow: hidden;
+	padding: .5em;
+	.nav-logo {
+		max-width: 6em;
+		max-height: 6em;
+		float: left;
+
+		img{
+			width: 100%;
+		}
+	}
+	.nav-link{
+		float: left;
+		margin-top: 2.7em;
+		margin-right: 1em;
+	}
+	.nav-reg-link-container{
+		float: right;
+	}
+};

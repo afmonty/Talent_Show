@@ -14,15 +14,16 @@ let loggedIn = require('../lib/middleware/logged-in');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	res.render('index', {
-		title: 'Talent Show'
+		//title: 'Talent Show'
+		user: req.user
 	});
 });
 
-router.get('/dashboard', loggedIn, function(req, res, next) {
-	res.render('dashboard', {
-		title: 'User Dashboard'
-	});
-});
+// router.get('/dashboard', loggedIn, function(req, res, next) {
+// 	res.render('dashboard', {
+// 		//title: 'User Dashboard'
+// 	});
+// });
 
 router.get('/schools', function(req, res, next) {
 	let school = new School();
@@ -39,7 +40,7 @@ router.get('/submissions', function(req, res, next) {
 	submission.fetchAll().then(apps => {
 		res.render('submissions', {
 			title: 'Submissions',
-			submissions: apps
+			submissions: submissions
 		});
 	});
 });

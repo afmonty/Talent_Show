@@ -10,7 +10,8 @@ exports.up = function(knex, Promise) {
 		t.string('address2').nullable();
 		t.integer('userId')
 			.unsigned()
-			.notNull()
+			.nullable()
+			.default('0')
 			.references('id')
 			.inTable('users')
 			.onDelete('CASCADE');
