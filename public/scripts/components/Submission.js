@@ -19,24 +19,23 @@ export default React.createClass({
 		Schools.fetch();
 	},
 	render: function() {
-		// Schools.fetch();
 		 	const schoolList = this.state.Schools.map((school, index) => {
 		 		return (
-					<option ref="schools" value={Schools.get('id')} key={index}>{Schools.get('schoolName')}</option> 
+					<option ref="schools" value={school.get('id')} key={index}>{school.get('schoolName')}</option> 
 			);
 		});
 		return (
 			<main>
 				<Nav/>
-				<h1> Select a school </h1>
+				<h3> Select a school </h3>
 					<div className="school-list">	
-						<select value = "Select a school" name="mydropdown" onChange={this.selectSchool}>
+						<select name="mydropdown">
 							<option value="Pick">Go to Schools</option>
 									{schoolList}
 						</select>
 					</div>
 					<div className="Select or Create a video to submit">
-						
+						<button onClick = {this.upload}>Upload</button>
 						<input type="filepicker" data-fp-apikey="AyvZxLzllQyuCAYDTZxvpz"
 								onchange="alert(event.fpfile.url)"/>
 					</div>	
@@ -44,6 +43,12 @@ export default React.createClass({
 		);
 	},
 	selectSchool: function(e) {
-     	this.setState({currentCategory: e.target.value});
-     }
+     	this.setState({School: e.target.value});
+     },
+    upload: function() {
+    	console.log('upload click');
+    	filepicker.pick(function(Blob) {
+    		console.log(Blob.url);
+    	});
+    }
 });

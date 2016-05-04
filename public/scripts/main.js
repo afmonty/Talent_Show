@@ -12,7 +12,7 @@ import Login from './components/Login.js';
 import Register from './components/Registration.js';
 import TalentRead from './components/TalentRead.js';
 
-
+filepicker.setKey('AyvZxLzllQyuCAYDTZxvpz');
 
 const router = (
 	<Router history={browserHistory}>

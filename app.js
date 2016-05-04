@@ -60,7 +60,11 @@ let auth = require('./routes/auth');
 app.use('/api/v1/', api);
 app.use('/auth', auth);
 app.use('/', index);
-
+app.use(function(req, res) {
+    res.render('index', {
+        user: req.user
+    });
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 	let err = new Error('Not Found');

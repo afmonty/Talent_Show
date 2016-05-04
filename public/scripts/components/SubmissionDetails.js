@@ -8,6 +8,8 @@ export default React.createClass({
 			<main>
 				<Nav/>
 				<h1> Submission Details</h1>
+				<video>Video</video>
+				<div>Name of Talent</div>
 			</main>
 		);
 	}
