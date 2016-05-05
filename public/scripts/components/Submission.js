@@ -1,23 +1,25 @@
 import React from 'react';
 import Nav from './Nav';
 import Schools from './../collections/SchoolCollection';
-var filepickerLibrary = require('filepicker-js');
+import filepicker from 'filepicker-js';
+
 // import Footer from './footer'; 
 
 export default React.createClass({
 	getInitialState: function(){
-		console.log('init');
 		return {
 			Schools: Schools
 		};
 	},
 	componentDidMount: function() {
-		console.log('didmount');
 		Schools.on('update', () => {
 			this.setState({Schools: Schools});
 		});
 		Schools.fetch();
 	},
+	componentWillUnmount: function() {
+		Schools.off('update');
+	 },
 	render: function() {
 		 	const schoolList = this.state.Schools.map((school, index) => {
 		 		return (
@@ -34,21 +36,20 @@ export default React.createClass({
 									{schoolList}
 						</select>
 					</div>
-					<div className="Select or Create a video to submit">
-						<button onClick = {this.upload}>Upload</button>
-						<input type="filepicker" data-fp-apikey="AyvZxLzllQyuCAYDTZxvpz"
-								onchange="alert(event.fpfile.url)"/>
+					<div className="video-container">
+						<label> Select a file to upload</label>
+						<button onClick = {this.upload}>Select File</button>
+						<video></video>
 					</div>	
 			</main>
 		);
 	},
-	selectSchool: function(e) {
-     	this.setState({School: e.target.value});
-     },
     upload: function() {
-    	console.log('upload click');
-    	filepicker.pick(function(Blob) {
-    		console.log(Blob.url);
-    	});
+    	filepicker.pick(
+    		function(Blob) {
+	    		console.log(Blob.url);
+	    		let url = Blob.url;
+	    		console.log(url);
+	    	});
     }
 });

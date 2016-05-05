@@ -12,6 +12,8 @@ import Login from './components/Login.js';
 import Register from './components/Registration.js';
 import TalentRead from './components/TalentRead.js';
 
+import filepicker from 'filepicker-js';
+
 filepicker.setKey('AyvZxLzllQyuCAYDTZxvpz');
 
 const router = (

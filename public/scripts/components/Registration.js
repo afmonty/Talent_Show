@@ -49,7 +49,7 @@ const Register = React.createClass({
             },
             success: (regUser)=>{
                 this.state.user.set(regUser);                           
-                hashHistory.push('/');
+                hashHistory.push('/App');
             },
             error: (err)=>{
                 this.setState({errors: err.responseJSON});

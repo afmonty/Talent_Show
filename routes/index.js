@@ -19,11 +19,11 @@ router.get('/', function(req, res, next) {
 	});
 });
 
-// router.get('/dashboard', loggedIn, function(req, res, next) {
-// 	res.render('dashboard', {
-// 		//title: 'User Dashboard'
-// 	});
-// });
+router.get('/dashboard', loggedIn, function(req, res, next) {
+	res.render('dashboard', {
+		title: 'User Dashboard'
+	});
+});
 
 router.get('/schools', function(req, res, next) {
 	let school = new School();
