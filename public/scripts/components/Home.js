@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from './Nav.js';
 // import Footer from './footer'; 
 
 export default React.createClass({
@@ -7,9 +8,7 @@ export default React.createClass({
 			<main>
 				<Nav/>
 				<h1>Landing</h1>
-				<div className="nav-reg-link-container">
-					<Link className="nav-link" to="Login">Login</Link>
-					<Link className="nav-link" to="Registration">Register</Link>
+				<div>
 				</div>
 			</main>
 		);

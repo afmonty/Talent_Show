@@ -1,6 +1,9 @@
 @import 'node_modules/rayon/src/styles/rayon';
+@import 'node_modules/normalize.css/normalize.css';
 
-
+body{
+	max-width: 1000px;
+}
 nav{
 	overflow: hidden;
 	padding: .5em;
@@ -21,4 +24,14 @@ nav{
 	.nav-reg-link-container{
 		float: right;
 	}
+}
+.login-box{
+	padding: 5em;
+	input{
+		margin-bottom: .5em;
+		width: 50%;
+	}
+}
+.submissionForm{
+	background: #D1D1D1;
 }

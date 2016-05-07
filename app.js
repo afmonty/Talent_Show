@@ -54,12 +54,14 @@ passportSetup(app);
 let api = require('./routes/api1');
 let index = require('./routes/index');
 let auth = require('./routes/auth');
+var users = require('./routes/users');
 
 /* 2. ROUTES are added here */
 
 app.use('/api/v1/', api);
 app.use('/auth', auth);
 app.use('/', index);
+app.use('/users', users);
 app.use(function(req, res) {
     res.render('index', {
         user: req.user

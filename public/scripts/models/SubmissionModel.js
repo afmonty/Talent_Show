@@ -3,11 +3,9 @@ import Backbone from 'backbone';
 export default Backbone.Model.extend({
 	defaults:{
 		url: '',
-		descrition: '',
+		description: '',
 		status: 'new',
-		userId: '',
-		schoolId: ''
-		
+		userId: ''
 	},
 	urlRoot: '/api/v1/submission',
 	idAttribute: 'id'

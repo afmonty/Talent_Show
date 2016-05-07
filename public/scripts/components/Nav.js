@@ -4,7 +4,6 @@ import Rayon from 'rayon';
 import $ from 'jquery';
 import user from './../models/UserModel';
 
-//import Submission from './../collections/SubmissionCollection';
 
 export default React.createClass({
 		getInitialState: function() {
@@ -30,7 +29,7 @@ export default React.createClass({
 				return (
 					<nav>
 						<div className = 'nav-logo' > 
-							<Link to="/App"><img src="../../images/talentShow.jpg" /></Link>
+							<Link to="/"><img src="../../images/talentShow.jpg" /></Link>
 						</div>
 						<Link className="nav-link" to="/Submission">Talent Submission</Link>
 						<Link className="nav-link" to="/SubmissionList">Schools</Link>
@@ -51,12 +50,14 @@ export default React.createClass({
 							<a href ='#' className="nav-link" onClick={this.loginOpenModal}>Login</a>
 							<Rayon isOpen={this.state.loginModalVisible} onClose={this.closeModal}>
 			                    <form onSubmit={this.login} className="login-box"> <h1>Login</h1>
-									<input className="u-full-width" type="text" placeholder="email" ref='email' title="Should be a valid email address" required="required"/>
+									<input className="u-full-width log-email" type="text" placeholder="email" ref='email' title="Should be a valid email address" required="required"/>
 									<div className="error">{this.state.errors.email ? this.state.errors.email.message : null} </div> 
-									<input className="u-full-width" type="password" placeholder="password" ref='password' title="Password is required and cannot left blank" required="required"/>
+									<input className="u-full-width log-password" type="password" placeholder="password" ref='password' title="Password is required and cannot left blank" required="required"/>
 									<div className="error">{this.state.errors.password ? this.state.errors.password.message : null}</div>
-									<button className="button-primary" type='submit'> Login </button>
-			                        <button onClick={this.closeModal}>Close</button>								
+									<div className= 'logreg-button-container'>
+										<button className="button-primary" type='submit'> Login </button>
+			                        	<button onClick={this.closeModal}>Close</button>								
+									</div>
 								</form>
 			                </Rayon>
 						</div>
@@ -71,8 +72,10 @@ export default React.createClass({
 									<label>Email</label>
 									<input type = 'email' ref = 'email'></input>
 									<label>Password</label>
-									<input type = 'password' ref = 'password'></input>
-									<button type = "submit">Submit User</button>
+									<div className= 'logreg-button-container'>
+										<input type = 'password' ref = 'password'></input>
+										<button type = "submit">Submit User</button>
+									</div>
             					</form>	
             				</Rayon>	
 						</div>
@@ -83,13 +86,11 @@ export default React.createClass({
         	this.setState({
            	registerModalVisible: true
         });
-        	closeModal();
     	},
     	loginOpenModal: function() {
         	this.setState({
            	loginModalVisible: true
         });
-        	closeModal();
    		 },
     	closeModal: function() {
         	this.setState({
@@ -104,7 +105,7 @@ export default React.createClass({
     			type: 'POST',
     			url: '/auth/logout'
     		});
-    	 	browserHistory.push('/App');
+    	 	browserHistory.push('/');
     	},
     	login: function(e) {
 			console.log('login');
@@ -121,7 +122,7 @@ export default React.createClass({
 					console.log('success');
 				
 				this.state.user.set(loggedArg);
-				browserHistory.push('/App');
+				browserHistory.push('/');
 				this.closeModal();
 				},
 			error: (errorArg) => {
@@ -147,7 +148,7 @@ export default React.createClass({
             },
             success: (regUser)=>{
                 this.state.user.set(regUser);                           
-                hashHistory.push('/App');
+                hashHistory.push('/');
             },
             error: (err)=>{
                 this.setState({errors: err.responseJSON});
