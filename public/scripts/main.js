@@ -26,7 +26,7 @@ const router = (
 		<Route path="/" component={Home}/>
 		
 		<Route path="/Submission" component={Submission}/>
-		<Route path="/SubmissionList/:id" component={SubmissionList}/>
+		<Route path="/SubmissionList" component={SubmissionList}/>
 		<Route path="/SubmissionDetails" component={SubmissionDetails}/>
 		<Route path="Login" component={Login}/>
 		<Route path="Registration" component={Register}/>
@@ -36,3 +36,4 @@ const router = (
 
 ReactDOM.render(router, document.getElementById('app'));
 
+///:id

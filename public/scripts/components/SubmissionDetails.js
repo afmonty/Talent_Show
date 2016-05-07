@@ -8,7 +8,9 @@ export default React.createClass({
 			<main>
 				<Nav/>
 				<h1> Submission Details</h1>
-				<video>Video</video>
+				<video src={this.state.url} width="170" height="85" controls>
+								<p>If you are reading this, it is because your browser does not support the HTML5 video element.</p>
+							</video>
 				<div>Name of Talent</div>
 			</main>
 		);

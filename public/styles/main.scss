@@ -1,9 +1,8 @@
 @import 'node_modules/rayon/src/styles/rayon';
 @import 'node_modules/normalize.css/normalize.css';
+//@import 'homepage';
 
-body{
-	max-width: 1000px;
-}
+
 nav{
 	overflow: hidden;
 	padding: .5em;
@@ -34,4 +33,18 @@ nav{
 }
 .submissionForm{
 	background: #D1D1D1;
+}
+.homepage{
+	max-width: 1000px;
+	
+	.display{
+		padding-top: 10em;
+		max-width: 50%;
+		height: 50em;
+		margin: 0 auto;
+	}
+	.welcome{
+		font-size: 18px;
+		line-height: 150%;
+	}
 }
