@@ -6,7 +6,7 @@ export default React.createClass({
 	render: function() {
 		return (
 			<main className = 'homepage'>
-				<Nav/>
+				<Nav className = 'homeNav'/>
 				<div className = 'display'>
 					<h1 className = 'greeting'>Welcome to the Talent Show</h1>
 					<div className = 'welcome'>

@@ -3,21 +3,42 @@ import Nav from './Nav';
 import schools from './../collections/SchoolCollection';
 import submission from './../collections/SubmissionCollection';
 import schoolSubmission from './../collections/SchoolSubmissionCollection';
- 
+import user from './../models/UserModel';
+import SubmissionItemSchool from './SubmissionItemSchool'
 
 export default React.createClass({
-getInitialState: function(){
+	getInitialState: function(){
 		return {
 			Schools: schools,
 			Submission: submission,
-			SchoolSubmission: schoolSubmission,
-			url: ''
+			schoolSubmission: schoolSubmission,
+			url: '',
+			user: user
 		};
 	},
-	componentWillMount: function() {
-		console.log(this.props.params);
-	},
+	// componentWillMount: function() {
+	// 	console.log(this.props.params);
+	// },
+	componentDidMount: function () {
+	    		this.state.user.on('change', ()=>{
+					this.setState({
+						user: user
+				});
+			});
+				schoolSubmission.on('update', this.updateSchoolSubmission);
+				schoolSubmission.fetch({
+					date: {
+						withRelated: ['schools']
+					}
+				});
+    },
+    updateSchoolSubmission: function () {
+    	this.setState({
+    		schoolSubmission: schoolSubmission
+    	});
+    },
 	render: function() {
+		console.log(schoolSubmission);
 		 // const submissionlItem = schoolSubmission.forEach((category, i, array) => {
 			
 		 // 		return (

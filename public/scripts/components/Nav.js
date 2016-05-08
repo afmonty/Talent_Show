@@ -44,7 +44,7 @@ export default React.createClass({
 				return (
 					<nav>
 						<div className = 'nav-logo'>
-							<Link to="/"><img src="../../images/talentShow.jpg" /></Link>	
+							<Link to="/" className = 'logo'>Talent Show</Link>	
 						</div>
 						<div className="nav-reg-link-container">	
 							<a href ='#' className="nav-link" onClick={this.loginOpenModal}>Login</a>
@@ -54,7 +54,7 @@ export default React.createClass({
 									<div className="error">{this.state.errors.email ? this.state.errors.email.message : null} </div> 
 									<input className="u-full-width log-password" type="password" placeholder="password" ref='password' title="Password is required and cannot left blank" required="required"/>
 									<div className="error">{this.state.errors.password ? this.state.errors.password.message : null}</div>
-									<div className= 'logreg-button-container'>
+									<div className= 'logregButtonContainer'>
 										<button className="button-primary" type='submit'> Login </button>
 			                        	<button onClick={this.closeModal}>Close</button>								
 									</div>
@@ -64,7 +64,7 @@ export default React.createClass({
 						<div className="nav-reg-link-container">
 							<a href = '#' className="nav-link" onClick={this.registerOpenModal}>{this.props.registerModalVisible}Register</a>
 							<Rayon isOpen={this.state.registerModalVisible} onClose={this.closeModal}>
-								<form onSubmit={this.register} className = 'register'>
+								<form onSubmit={this.register} className = 'register'> <h1>Register</h1>
 				                    <label>First Name</label>
 									<input type = 'text' ref = 'firstName'></input>
 									<label>Last Name</label>
@@ -72,9 +72,10 @@ export default React.createClass({
 									<label>Email</label>
 									<input type = 'email' ref = 'email'></input>
 									<label>Password</label>
-									<div className= 'logreg-button-container'>
-										<input type = 'password' ref = 'password'></input>
+									<input type = 'password' ref = 'password'></input>
+									<div className= 'logregButtonContainer'>
 										<button type = "submit">Submit User</button>
+										<button onClick={this.closeModal}>Close</button>
 									</div>
             					</form>	
             				</Rayon>	

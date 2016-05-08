@@ -1,13 +1,14 @@
 import React from 'react';
 import Nav from './Nav';
-import SubmissionItem from './SubmissionItem';
+import SubmissionItemTalent from './SubmissionItem';
 import schools from './../collections/SchoolCollection';
 import Submission from './../collections/SubmissionCollection';
 import schoolSubmission from './../collections/SchoolSubmissionCollection';
 import user from './../models/UserModel';
 
+
 export default React.createClass({
-getInitialState: function(){
+	getInitialState: function(){
 		return {
 			Schools: schools,
 			Submission: Submission,
@@ -16,47 +17,46 @@ getInitialState: function(){
 			user: user
 		};
 	},
-	componentWillMount: function() {
-			Submission.fetch();
-	},
+	// componentWillMount: function() {
+			
+	// },
 	componentDidMount: function () {
 	    		this.state.user.on('change', ()=>{
-				this.setState({
-					user: user,
-					Submission: Submission
+					this.setState({
+						user: user
 				});
-			});	
-
-    	},
+			});
+				Submission.on('update', this.updateSubmission);
+				Submission.fetch();
+    },
+    updateSubmission: function () {
+    	this.setState({
+    		Submission: Submission
+    	});
+    },
 	render: function() {
-		Submission.fetch();
 		let userId = this.state.user.get('id');
-		console.log(userId);
-		console.log(Submission);
-		const submissionRows = Submission.filter((user, i, array) => {
-				if (user.get('id') === userId) {
-					console.log(user.get('id'), userId);
+		const submissionRows = Submission.filter((subs, i, array) => {
+				if (subs.get('userId') === userId) {
 					return true;
 				} else {
 					return false;
 				}
-				}).map((user, i, array)=>{
+				}).map((subs, i, array)=>{
 				return (
-					<SubmissionItem
-	
-					id = {Submission.get('id')}
-					title={user.get('title')}
-					url = {user.get('url')}
-					desc = {user.get('desc')}
-					date={user.get('createdAt')} />
+					<SubmissionItemTalent
+					key = {subs.get('id')}
+					id = {subs.get('userId')}
+					title={subs.get('title')}
+					url = {subs.get('url')}
+					desc = {subs.get('description')}
+					date={subs.get('createdAt')} />
 					);
 			});
 		return (
 			<main>
 				<Nav/>
-				<h1> Talen Submission List Page</h1>
-				<div>
-					This will have a list of Submission data
+				<div className = 'talentReadContainer'>
 						{submissionRows}
 				</div>
 			</main>

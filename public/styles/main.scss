@@ -3,14 +3,26 @@
 //@import 'homepage';
 
 
+#app{
+	max-width: 1000px;
+	// background: url(../../images/stage.jpeg) no-repeat center center fixed;
+	// background-size: cover;
+}
+//navbar
 nav{
 	overflow: hidden;
 	padding: .5em;
+	// position: fixed;
+ //  	top: 0;
+ //  	left: 0;
+ //  	z-index: 9999;
+ //  	width: 100%;
+  	background: #5B5F97;
 	.nav-logo {
 		max-width: 6em;
 		max-height: 6em;
 		float: left;
-
+		margin-right: 1em;
 		img{
 			width: 100%;
 		}
@@ -19,11 +31,16 @@ nav{
 		float: left;
 		margin-top: 2.7em;
 		margin-right: 1em;
+		color: white;
 	}
 	.nav-reg-link-container{
 		float: right;
 	}
+	.rayon-spacer{
+		top: 105px;
+	}
 }
+//login
 .login-box{
 	padding: 5em;
 	input{
@@ -31,20 +48,53 @@ nav{
 		width: 50%;
 	}
 }
+//registration
+.register{
+	padding: 2em;
+	label{
+		display: block;
+		margin-bottom: .5em;
+	}
+	input{
+		width: 80%;
+		display: block;
+		margin-bottom: .5em;
+	}
+	.logregButtonContainer{
+		float: right;
+		button{
+			margin: .25em;
+		}
+	}
+}
+//submission
 .submissionForm{
 	background: #D1D1D1;
 }
+//home
 .homepage{
-	max-width: 1000px;
-	
+	.homeNav{
+		background: none;
+	}
 	.display{
-		padding-top: 10em;
+		padding-top: 12em;
 		max-width: 50%;
 		height: 50em;
 		margin: 0 auto;
+		//background: #EFEFEF;
+		//color: white;
 	}
 	.welcome{
 		font-size: 18px;
 		line-height: 150%;
+	}
+}
+//talent read page
+.talentReadContainer{
+	padding-top: 5em;
+	max-width: 75%;
+	margin: 0 auto;
+	.itemContainer{
+		border-bottom: 2px solid #EFEFEF;
 	}
 }
