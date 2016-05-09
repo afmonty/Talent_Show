@@ -15,7 +15,7 @@ export default React.createClass({
         	};
     	},
     	componentDidMount: function() {
-	    		this.state.user.on('change', ()=>{
+	    	this.state.user.on('change', ()=>{
 				this.setState({
 					user: user
 				});
@@ -140,11 +140,12 @@ export default React.createClass({
                 email: this.refs.email.value,
                 password: this.refs.password.value,
                 firstName: this.refs.firstName.value,
-                lastname: this.refs.lastName.value
+                lastName: this.refs.lastName.value
             },
             success: (regUser)=>{
                 this.state.user.set(regUser);                           
                 hashHistory.push('/');
+                this.closeModal();
             },
             error: (err)=>{
                 this.setState({errors: err.responseJSON});

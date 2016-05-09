@@ -1,8 +1,8 @@
 module.exports = {
 	local: {
 		saltRounds: 10,
-		registerRedirect: '/dashboard',
-		loginRedirect: '/dashboard'
+		registerRedirect: '/',
+		loginRedirect: '/'
 	},
 	google: {
 		clientID: '{{ Google OAuth2 Client ID }}',

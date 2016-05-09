@@ -24,8 +24,8 @@ export default React.createClass({
 			});
 				schoolSubmission.on('update', this.updateSchoolSubmission);
 				schoolSubmission.fetch({
-					date: {
-						withRelated: ['schoolId']
+					data: {
+						withRelated: ['school']
 					}
 				});
     },

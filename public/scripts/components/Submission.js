@@ -4,7 +4,8 @@ import Schools from './../collections/SchoolCollection';
 import SubmissionCollection from './../collections/SubmissionCollection';
 import filepicker from 'filepicker-js';
 import schoolSubmissionCollection from './../collections/SchoolSubmissionCollection';
-
+import user from './../models/UserModel';
+import {browserHistory} from 'react-router';
 // import Footer from './footer'; 
 
 export default React.createClass({
@@ -13,11 +14,14 @@ export default React.createClass({
 			Schools: Schools,
 			Submission: SubmissionCollection,
 			url: '',
-			schoolSubmission: schoolSubmissionCollection
+			schoolSubmission: schoolSubmissionCollection,
+			user: user
 		};
 	},
 	componentDidMount: function() {
-		console.log('mount');
+		this.state.user.on('update', () => {
+			this.setState({user: user});
+		});
 		Schools.on('update', () => {
 			this.setState({Schools: Schools});
 		});
@@ -90,8 +94,7 @@ export default React.createClass({
 	    			},
 					//eding options
 					{
-						success: () => {
-						this.state.user.setState();
+						success: (user) => {
 							browserHistory.push('/TalentRead');
 						}
 					});	

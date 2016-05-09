@@ -18,7 +18,7 @@ export default React.createClass({
 		};
 	},
 	componentDidMount: function () {
-		this.state.user.on('change', ()=>{
+		this.state.user.on('update', ()=>{
 			this.setState({
 				user: user
 			});
@@ -28,7 +28,11 @@ export default React.createClass({
 				Submission: Submission
 			});
 		});
-		Submission.fetch();
+		Submission.fetch({
+			data: {
+				withRelated: ['school']
+			}
+		});
     },
     componentWillUnMount: function() {
 		Submission.off('update');
@@ -37,6 +41,7 @@ export default React.createClass({
 	render: function() {
 		let userId = this.state.user.get('id');
 		const submissionRows = Submission.filter((subs, i, array) => {
+			console.log(subs);
 				if (subs.get('userId') === userId) {
 					return true;
 				} else {
