@@ -1,18 +1,40 @@
 import React from 'react';
 import Nav from './Nav';
+import {browserHistory} from 'react-router';
+import SubmissionModel from './../models/SubmissionModel';
+//import SubmissionItemTalent from './SubmissionItem';
 // import Footer from './footer'; 
 
 export default React.createClass({
+	getInitialState: function () {
+		let sub = new SubmissionModel({id: this.props.params.submissionId});
+		return {sub: sub};
+	},
+	componentDidMount: function () {
+		this.state.sub.on('change', this.update);
+		this.state.sub.fetch();
+	},
 	render: function() {
 		return (
 			<main>
 				<Nav/>
-				<h1> Submission Details</h1>
-				<video src={this.state.url} width="170" height="85" controls>
-								<p>If you are reading this, it is because your browser does not support the HTML5 video element.</p>
-							</video>
-				<div>Name of Talent</div>
-			</main>
+				<section className = 'detailsContainer'>	
+					<h2>Beautiful Dancer</h2>
+					 <span className = 'detailStatus'>{this.state.sub.get('status')}</span>
+					<video className = 'subVideo' src={this.state.sub.get('url')} width="400" height="200" controls></video>
+	 				<p className = 'subdescription'>{this.state.sub.get('description')}</p>
+					<button onClick = {this.close}>Back to Your List</button>
+				</section>
+			</main> 
 		);
+	},
+	close: function () {
+		browserHistory.push('/TalentRead');
+	},
+	update: function (sub) {
+		this.setState({sub: sub});
 	}
 });
+
+	
+

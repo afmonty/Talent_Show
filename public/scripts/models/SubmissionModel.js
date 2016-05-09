@@ -5,7 +5,7 @@ export default Backbone.Model.extend({
 		url: '',
 		description: '',
 		status: 'new',
-		title: 'Look at Me',
+		//title: 'Look at Me',
 		userId: ''
 	},
 	urlRoot: '/api/v1/submission',

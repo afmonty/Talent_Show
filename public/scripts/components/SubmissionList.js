@@ -4,7 +4,7 @@ import schools from './../collections/SchoolCollection';
 import submission from './../collections/SubmissionCollection';
 import schoolSubmission from './../collections/SchoolSubmissionCollection';
 import user from './../models/UserModel';
-import SubmissionItemSchool from './SubmissionItemSchool'
+import SubmissionItemSchool from './SubmissionItemSchool';
 
 export default React.createClass({
 	getInitialState: function(){
@@ -16,9 +16,6 @@ export default React.createClass({
 			user: user
 		};
 	},
-	// componentWillMount: function() {
-	// 	console.log(this.props.params);
-	// },
 	componentDidMount: function () {
 	    		this.state.user.on('change', ()=>{
 					this.setState({
@@ -28,7 +25,7 @@ export default React.createClass({
 				schoolSubmission.on('update', this.updateSchoolSubmission);
 				schoolSubmission.fetch({
 					date: {
-						withRelated: ['schools']
+						withRelated: ['schoolId']
 					}
 				});
     },

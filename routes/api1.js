@@ -13,7 +13,6 @@ router.post(
 	'/Submission',
 	loggedIn,
 	function(req, res, next){
-		console.log('working');
 		req.body.userId = req.user.id;
 		next();
 	},
@@ -23,7 +22,6 @@ router.post(
 	'/schoolSubmission',
 	loggedIn,
 	function(req, res, next){
-		console.log('working');
 		req.body.userId = req.user.id;
 		next();
 	},

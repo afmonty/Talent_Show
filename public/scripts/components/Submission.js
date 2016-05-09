@@ -45,14 +45,14 @@ export default React.createClass({
 							<div></div>
 						</div>
 						<div className="video-container">
-							<label> Select a file to upload</label>
+							<h3> Select a file to upload</h3>
 							<button type = 'button' onClick = {this.upload}>Select File</button>
 							<video src={this.state.url} width="350" height="175" controls>
 								<p>If you are reading this, it is because your browser does not support the HTML5 video element.</p>
 							</video>
 						</div>
 						<div className="sub-desc-container">
-							<label className="desc_label">Enter a description for your submission</label>
+							<h3 className="desc_label">Enter a description for your submission</h3>
 							<input className="desc_input" ref = "desc_input" placeholder="Enter a description"></input>
 						</div>
 						<div className = "sub-button-container">

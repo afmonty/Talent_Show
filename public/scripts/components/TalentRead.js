@@ -17,23 +17,23 @@ export default React.createClass({
 			user: user
 		};
 	},
-	// componentWillMount: function() {
-			
-	// },
 	componentDidMount: function () {
-	    		this.state.user.on('change', ()=>{
-					this.setState({
-						user: user
-				});
+		this.state.user.on('change', ()=>{
+			this.setState({
+				user: user
 			});
-				Submission.on('update', this.updateSubmission);
-				Submission.fetch();
+		});
+		Submission.on('update', () => {
+			this.setState({
+				Submission: Submission
+			});
+		});
+		Submission.fetch();
     },
-    updateSubmission: function () {
-    	this.setState({
-    		Submission: Submission
-    	});
-    },
+    componentWillUnMount: function() {
+		Submission.off('update');
+		user.off('update');	
+	},
 	render: function() {
 		let userId = this.state.user.get('id');
 		const submissionRows = Submission.filter((subs, i, array) => {
@@ -46,16 +46,24 @@ export default React.createClass({
 				return (
 					<SubmissionItemTalent
 					key = {subs.get('id')}
+					submissionId = {subs.get('id')}
 					id = {subs.get('userId')}
 					title={subs.get('title')}
+					school = {subs.get('schoolId')}
+					status = {subs.get('status')}
 					url = {subs.get('url')}
 					desc = {subs.get('description')}
 					date={subs.get('createdAt')} />
 					);
 			});
 		return (
-			<main>
+			<main className="talentContainer">
 				<Nav/>
+				<div className = 'titleContainer'>
+					<span className='title'>Submission</span>
+					<span className='school'>School</span>
+					<span className='status'>Status</span>
+				</div>
 				<div className = 'talentReadContainer'>
 						{submissionRows}
 				</div>

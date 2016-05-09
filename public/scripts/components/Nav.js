@@ -29,11 +29,10 @@ export default React.createClass({
 				return (
 					<nav>
 						<div className = 'nav-logo' > 
-							<Link to="/"><img src="../../images/talentShow.jpg" /></Link>
+							<Link to="/" className = 'logo'>Talent Show</Link>
 						</div>
 						<Link className="nav-link" to="/Submission">Talent Submission</Link>
 						<Link className="nav-link" to="/SubmissionList">Schools</Link>
-						<Link className="nav-link" to="/SubmissionDetails">Details</Link>
 						<Link className="nav-link" to="/TalentRead">Talent</Link>
 						<div className="nav-reg-link-container">
 							<span className="nav-link">{this.state.user.get('firstName')}</span>
@@ -109,7 +108,6 @@ export default React.createClass({
     	 	browserHistory.push('/');
     	},
     	login: function(e) {
-			console.log('login');
 			e.preventDefault();
 			$.ajax({
 			url: '/auth/login',
@@ -117,15 +115,12 @@ export default React.createClass({
 			data: {
 				email: this.refs.email.value,
 				password: this.refs.password.value
-				},
-
+			},
 			success: (loggedArg) => {
-					console.log('success');
-				
 				this.state.user.set(loggedArg);
 				browserHistory.push('/');
 				this.closeModal();
-				},
+			},
 			error: (errorArg) => {
 					console.log('error');
 
