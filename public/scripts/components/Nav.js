@@ -3,6 +3,7 @@ import {Link, browserHistory} from 'react-router';
 import Rayon from 'rayon';
 import $ from 'jquery';
 import user from './../models/UserModel';
+import schoolCollection from './../collections/SchoolCollection';
 
 
 export default React.createClass({
@@ -11,7 +12,9 @@ export default React.createClass({
             	errors: {},
             	user: user,
             	loginModalVisible: false,
-            	registerModalVisible: false
+            	registerModalVisible: false,
+            	school: schoolCollection,
+            	userType: ''
         	};
     	},
     	componentDidMount: function() {
@@ -63,7 +66,7 @@ export default React.createClass({
 						<div className="nav-reg-link-container">
 							<a href = '#' className="nav-link" onClick={this.registerOpenModal}>{this.props.registerModalVisible}Register</a>
 							<Rayon isOpen={this.state.registerModalVisible} onClose={this.closeModal}>
-								<form onSubmit={this.register} className = 'register'> <h1>Register</h1>
+								<form  className = 'register'> <h1>Register</h1>
 				                    <label>First Name</label>
 									<input type = 'text' ref = 'firstName'></input>
 									<label>Last Name</label>
@@ -72,8 +75,15 @@ export default React.createClass({
 									<input type = 'email' ref = 'email'></input>
 									<label>Password</label>
 									<input type = 'password' ref = 'password'></input>
+									<label>School Information</label>
+									
+									<div className= 'schoolRegContainer' style={{display: 'none'}}>
+										<input type='text' ref = 'schoolName' placeholder = 'School Name'></input>
+										<input type='text' ref = 'address' placeholder ='State'></input>
+									</div>
 									<div className= 'logregButtonContainer'>
-										<button type = "submit">Submit User</button>
+										<button className = 'showSchool' onClick = {this.showSchool}>Register as a School</button>
+										<button onClick={this.register} type = "submit">Submit</button>
 										<button onClick={this.closeModal}>Close</button>
 									</div>
             					</form>	
@@ -97,6 +107,12 @@ export default React.createClass({
             registerModalVisible: false,
             loginModalVisible: false
         });
+    	},
+    	showSchool: function(){
+    		$('.schoolRegContainer').css('display', 'block');
+    		this.setState({userType: 'school'});
+    		console.log(this.state.userType);
+    		$('.showSchool').css('display', 'none');
     	},
 		logout: function(e) {
     		e.preventDefault();
@@ -140,13 +156,30 @@ export default React.createClass({
                 email: this.refs.email.value,
                 password: this.refs.password.value,
                 firstName: this.refs.firstName.value,
-                lastName: this.refs.lastName.value
+                lastName: this.refs.lastName.value,
+                userType: 'school'
             },
-            success: (regUser)=>{
-                this.state.user.set(regUser);                           
-                hashHistory.push('/');
-                this.closeModal();
-            },
+         	success: (user) => {
+         			if(this.state.userType !== 'School') {
+         				this.state.user.set(user);
+         				browserHistory.push('/Submission');
+         			} else {
+         				this.state.school.create(
+		    			{
+		    				schoolName: this.refs.schoolName.value,
+		    				address: this.refs.address.value,
+		    				userId: user.id
+		    			},
+						{
+			            success: (school)=>{
+			                this.state.user.set(user);                           
+			                browserHistory.push('/SubmissionList');
+			                this.closeModal();
+			            	}
+			            });
+         			}
+	    	
+		    },
             error: (err)=>{
                 this.setState({errors: err.responseJSON});
             }

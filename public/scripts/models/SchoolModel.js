@@ -8,7 +8,7 @@ export default Backbone.Model.extend({
 		schoolName: '',
 		address: '',
 		address2: '',
-		contact: ''
+		userId: ''
 	},
 	urlRoot: '/api/v1/school',
 	idAttribute: 'id'

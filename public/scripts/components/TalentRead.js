@@ -41,7 +41,6 @@ export default React.createClass({
 	render: function() {
 		let userId = this.state.user.get('id');
 		const submissionRows = Submission.filter((subs, i, array) => {
-			console.log(subs);
 				if (subs.get('userId') === userId) {
 					return true;
 				} else {
@@ -54,7 +53,7 @@ export default React.createClass({
 					submissionId = {subs.get('id')}
 					id = {subs.get('userId')}
 					title={subs.get('title')}
-					school = {subs.get('schoolId')}
+					school = {subs.get('school')[0] ? subs.get('school')[0].schoolName : ''}
 					status = {subs.get('status')}
 					url = {subs.get('url')}
 					desc = {subs.get('description')}
