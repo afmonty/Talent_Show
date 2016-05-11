@@ -8,7 +8,14 @@
 	<body>
 		<div id="app"></div>
 		<script type="text/javascript">
-			window.user = <%- user ? JSON.stringify(user) : '{}' %>;
+			<% if(user) { %>
+				window.user = <%- JSON.stringify(user) %>;
+				<% if(school) { %>
+					window.user.school = <%- JSON.stringify(school) %>;
+				<% } %>
+			<% } else { %>
+				window.user = {};
+			<% } %>
 		</script>
 		<script type="text/javascript" src="<%= env === 'development' ? '/scripts/bundle.js' : '/scripts/bundle.min.js?'+version %>"></script>
 		

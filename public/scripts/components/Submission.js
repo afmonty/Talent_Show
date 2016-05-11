@@ -92,7 +92,7 @@ export default React.createClass({
 	    				schoolId: this.refs.school.value,
 	    				submissionId: submission.id
 	    			},
-					//eding options
+					//ending options
 					{
 						success: (user) => {
 							browserHistory.push('/TalentRead');

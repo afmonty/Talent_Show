@@ -55,6 +55,7 @@ let api = require('./routes/api1');
 let index = require('./routes/index');
 let auth = require('./routes/auth');
 var users = require('./routes/users');
+let School = require('./models/School');
 
 /* 2. ROUTES are added here */
 
@@ -63,9 +64,19 @@ app.use('/auth', auth);
 app.use('/', index);
 app.use('/users', users);
 app.use(function(req, res) {
-    res.render('index', {
-        user: req.user
-    });
+	if(!req.user) {
+		return res.render('index', {user: null, school: null});
+	}
+	let s = new School({});
+	s.where({userId: req.user.id})
+	.fetch()
+	.then(school => {
+		 res.render('index', {
+			//title: 'Talent Show'
+			user: req.user,
+			school: school
+		});
+	});
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

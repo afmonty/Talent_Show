@@ -4,6 +4,7 @@ import Rayon from 'rayon';
 import $ from 'jquery';
 import user from './../models/UserModel';
 import schoolCollection from './../collections/SchoolCollection';
+//import school from './../models/SchoolModel';
 
 
 export default React.createClass({
@@ -18,7 +19,7 @@ export default React.createClass({
         	};
     	},
     	componentDidMount: function() {
-	    	this.state.user.on('change', ()=>{
+	    	this.state.user.on('update', ()=>{
 				this.setState({
 					user: user
 				});
@@ -82,7 +83,7 @@ export default React.createClass({
 										<input type='text' ref = 'address' placeholder ='State'></input>
 									</div>
 									<div className= 'logregButtonContainer'>
-										<button className = 'showSchool' onClick = {this.showSchool}>Register as a School</button>
+										<button  type = 'button' className = 'showSchool' onClick = {this.showSchool}>Register as a School</button>
 										<button onClick={this.register} type = "submit">Submit</button>
 										<button onClick={this.closeModal}>Close</button>
 									</div>
@@ -111,7 +112,6 @@ export default React.createClass({
     	showSchool: function(){
     		$('.schoolRegContainer').css('display', 'block');
     		this.setState({userType: 'school'});
-    		console.log(this.state.userType);
     		$('.showSchool').css('display', 'none');
     	},
 		logout: function(e) {
@@ -133,9 +133,25 @@ export default React.createClass({
 				password: this.refs.password.value
 			},
 			success: (loggedArg) => {
-				this.state.user.set(loggedArg);
-				browserHistory.push('/');
-				this.closeModal();
+				 if (loggedArg.userType === 'talent'){
+					this.state.user.set(loggedArg);
+					browserHistory.push('/TalentRead');
+					this.closeModal();
+				} else {
+					this.state.user.set(loggedArg);
+					this.state.school.fetch({
+						data: {
+							withRelated: ['user'],
+							where: {userId: this.state.user.get('id')}
+						},
+						success: (school) => {	
+							this.state.user.set('school', school.at(0).toJSON());
+							this.closeModal();
+							browserHistory.push('/SubmissionList');	 
+						}
+					});
+				}
+				
 			},
 			error: (errorArg) => {
 					console.log('error');
@@ -157,10 +173,10 @@ export default React.createClass({
                 password: this.refs.password.value,
                 firstName: this.refs.firstName.value,
                 lastName: this.refs.lastName.value,
-                userType: 'school'
+                userType: this.state.userType
             },
          	success: (user) => {
-         			if(this.state.userType !== 'School') {
+         			if(this.state.userType !== 'school') {
          				this.state.user.set(user);
          				browserHistory.push('/Submission');
          			} else {
@@ -172,9 +188,11 @@ export default React.createClass({
 		    			},
 						{
 			            success: (school)=>{
-			                this.state.user.set(user);                           
+			                this.state.user.set(user); 
+			                this.state.user.set('school', school);                          
 			                browserHistory.push('/SubmissionList');
 			                this.closeModal();
+
 			            	}
 			            });
          			}

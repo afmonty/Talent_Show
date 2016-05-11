@@ -4,8 +4,9 @@ require('./Submission');
 
 module.exports = bookshelf.model('SchoolSubmission', {
 	tableName: 'schoolSubmissions',
+	hasTimestamps: [],
 	school: function() {
-		return this.belongsToMany('School', 'schoolSubmissions', 'schoolSubmissionId', 'schoolId');
+		return this.belongsTo('School', 'schoolId');
 	},
 	user: function() {
 		return this.belongsTo('User', 'userId');

@@ -6,7 +6,7 @@ module.exports = bookshelf.model('User', {
 		this.hasMany('Authentication', 'userId');
 	},
 	school: function() {
-		this.hasMany('School', 'userId');
+		this.hasOne('School', 'userId');
 	},
 	submission: function () {
 		this.hasMany('Submission', 'userId');

@@ -13,9 +13,18 @@ let loggedIn = require('../lib/middleware/logged-in');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.render('index', {
-		//title: 'Talent Show'
-		user: req.user
+	if(!req.user) {
+		return res.render('index', {user: null, school: null});
+	}
+	let s = new School({});
+	s.where({userId: req.user.id})
+	.fetch()
+	.then(school => {
+		 res.render('index', {
+			//title: 'Talent Show'
+			user: req.user,
+			school: school
+		});
 	});
 });
 
