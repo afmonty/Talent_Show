@@ -25,14 +25,33 @@ export default React.createClass({
 	 				<p className = 'subdescription'>{this.state.sub.get('description')}</p>
 					<button onClick = {this.close}>Back to Your List</button>
 				</section>
+				<div className='acceptRejectContainer' ref='accept'>
+					<label>Accept<input name ='accept'className='accept' type ='radio' value = 'accept'/></label>
+					<label>Reject<input name ='accept'className='reject' type ='radio' value = 'reject'/></label>
+				</div>
+				<div className='sendMessageContainer'>
+					<input className='message' placeholder = 'Send a message this person' ref='message'></input>
+					<button type='button' className='acceptRejectbutton' onClick={this.changeStatus}>Send Update to Student</button>
+				</div>
 			</main> 
 		);
 	},
 	close: function () {
-		browserHistory.push('/TalentRead');
+		browserHistory.push('/SubmissionList');
 	},
 	update: function (sub) {
 		this.setState({sub: sub});
+	},
+	changeStatus: function (accept) {
+		this.state.sub.save({
+			status: this.refs.accept.querySelector('input:checked').value,
+			message: this.refs.message.value
+		},
+		{
+		success: (accept) => {
+			browserHistory.push('/SubmissionList');
+		}
+		});
 	}
 });
 

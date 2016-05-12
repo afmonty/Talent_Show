@@ -46,11 +46,9 @@ export default React.createClass({
 			});
     },
 	render: function() {
-		console.log(user);
-		console.log(this.state.user.get('school').id);
 		let schoolId = this.state.user.get('school').id;
 		const submissionRows =Submission.filter((subs, i, array) => {
-				if (subs.get('schoolId') === schoolId) {
+				if (subs.get('schoolId') === schoolId && subs.get('status') === 'new') {
 					console.log(schoolId);
 					return true;
 				} else {
@@ -73,9 +71,8 @@ export default React.createClass({
 		return (
 			<main>
 				<Nav/>
-				<h1> School Submission List Page</h1>
+				<h1> {this.state.user.get('school').schoolName}</h1>
 				<div>
-					This will have a list of Submission data
 					{submissionRows}
 				</div>
 			</main>

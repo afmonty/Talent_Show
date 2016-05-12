@@ -6,6 +6,7 @@
 
 #app{
 	max-width: 1000px;
+	background: #DEDEDE;
 }
 //navbar
 nav{
@@ -104,6 +105,13 @@ nav{
 	h3 {
 		font-family: open sans;
 		display: inline;
+	}
+	.titleContainer{
+		margin-top: .5em;
+		margin-bottom: .5em;
+		h3 {
+			margin-right: 1em;
+		}
 	}
 	.school-list{
 		display: inline;

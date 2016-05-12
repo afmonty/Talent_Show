@@ -40,6 +40,10 @@ export default React.createClass({
 			<main>
 				<Nav/>
 				<form className = "submissionForm" onSubmit = {this.submit}>
+					<div className='titleContainer'>
+						<h3 className='titleLabel'>Enter a Title for your submission</h3>
+						<input className ='title' type='text' ref='title' placeholder='Submission Title'/>
+					</div>
 					<h3> Select a school </h3>
 						<div className="school-list">	
 							<select name="mydropdown" ref = 'school'>
@@ -82,7 +86,8 @@ export default React.createClass({
 				schoolId: this.refs.school.value,
 				url: this.state.url,
 				description: this.refs.desc_input.value,
-				status: 'new'
+				status: 'new',
+				title: this.refs.title.value
 			},  //ending attributes
 			//starting options
 			{	
