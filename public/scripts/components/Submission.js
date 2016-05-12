@@ -61,10 +61,11 @@ export default React.createClass({
 						</div>
 						<div className="sub-desc-container">
 							<h3 className="desc_label">Enter a description for your submission</h3>
-							<input className="desc_input" ref = "desc_input" placeholder="Enter a description"></input>
+							<textarea className="desc_input" ref = "desc_input" placeholder="Enter a description"></textarea>
 						</div>
 						<div className = "sub-button-container">
 							<button className= "sub-button" >Submit</button>
+							<button className="subCancel" onClick={this.cancel}>Cancel</button>
 						</div>
 				</form>
 			</main>
@@ -77,6 +78,9 @@ export default React.createClass({
 	    	});
 	    });
 	
+    },
+    cancel: function(user) {
+    	browserHistory.push('/TalentRead');
     },
     submit: function (e){
 	    e.preventDefault();
@@ -99,7 +103,7 @@ export default React.createClass({
 	    			},
 					//ending options
 					{
-						success: (user) => {
+						complete: (user) => {
 							browserHistory.push('/TalentRead');
 						}
 					});	

@@ -26,29 +26,43 @@ export default React.createClass({
 			});	
     	},
     	componentWillUnmount:function(){
-    		this.state.user.off('change');
+    		this.state.user.off('update');
     	},
 		render: function(){
-			if(this.state.user.get('id')){
+			if(this.state.user.get('userType') === 'school'){
 				return (
 					<nav>
 						<div className = 'nav-logo' > 
 							<Link to="/" className = 'logo'>Talent Show</Link>
 						</div>
-						<Link className="nav-link" to="/Submission">Talent Submission</Link>
-						<Link className="nav-link" to="/SubmissionList">Schools</Link>
-						<Link className="nav-link" to="/TalentRead">Talent</Link>
+						
+						<Link className="nav-link" to="/SubmissionList">School Submission List</Link>
+						
+						<div className="nav-reg-link-container">
+							<span className="nav-link">{this.state.user.get('firstName')}</span>
+							<a href = '#' className="nav-link" onClick={this.logout}>Logout</a>	
+						</div>
+					</nav>);
+			} else if (this.state.user.get('userType') === 'talent') {
+				return (
+					<nav>
+						<div className = 'nav-logo' > 
+							<Link to="/" className = 'logo'>Talent Show</Link>
+						</div>
+						<Link className="nav-link" to="/TalentRead">Your Submissions</Link>	
+						<Link className="nav-link" to="/Submission">Create a Submission</Link>
 						<div className="nav-reg-link-container">
 							<span className="nav-link">{this.state.user.get('firstName')}</span>
 							<a href = '#' className="nav-link" onClick={this.logout}>Logout</a>	
 						</div>
 					</nav>);
 			} else {
-				return (
+				return (	
 					<nav>
 						<div className = 'nav-logo'>
 							<Link to="/" className = 'logo'>Talent Show</Link>	
 						</div>
+
 						<div className="nav-reg-link-container">	
 							<a href ='#' className="nav-link" onClick={this.loginOpenModal}>Login</a>
 							<Rayon isOpen={this.state.loginModalVisible} onClose={this.closeModal}>
@@ -135,8 +149,9 @@ export default React.createClass({
 			success: (loggedArg) => {
 				 if (loggedArg.userType === 'talent'){
 					this.state.user.set(loggedArg);
-					browserHistory.push('/TalentRead');
 					this.closeModal();
+					browserHistory.push('/TalentRead');
+					
 				} else {
 					this.state.user.set(loggedArg);
 					this.state.school.fetch({
@@ -173,7 +188,7 @@ export default React.createClass({
                 password: this.refs.password.value,
                 firstName: this.refs.firstName.value,
                 lastName: this.refs.lastName.value,
-                userType: this.state.userType
+                userType: this.state.userType || 'talent'
             },
          	success: (user) => {
          			if(this.state.userType !== 'school') {
@@ -189,9 +204,10 @@ export default React.createClass({
 						{
 			            success: (school)=>{
 			                this.state.user.set(user); 
-			                this.state.user.set('school', school);                          
+			                this.state.user.set('school', school);  
+			                this.closeModal();                        
 			                browserHistory.push('/SubmissionList');
-			                this.closeModal();
+			                
 
 			            	}
 			            });
