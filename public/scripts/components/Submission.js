@@ -6,7 +6,7 @@ import filepicker from 'filepicker-js';
 import schoolSubmissionCollection from './../collections/SchoolSubmissionCollection';
 import user from './../models/UserModel';
 import {browserHistory} from 'react-router';
-// import Footer from './footer'; 
+
 
 export default React.createClass({
 	getInitialState: function(){

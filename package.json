@@ -79,6 +79,7 @@
     "pushpin": "git+https://github.com/alarner/pushpin.git",
     "rayon": "^1.1.2",
     "react": "^0.14.8",
+    "react-datetime": "^2.1.0",
     "react-dom": "^0.14.8",
     "react-router": "^2.4.0",
     "request": "^2.69.0",

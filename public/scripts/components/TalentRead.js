@@ -6,6 +6,8 @@ import Submission from './../collections/SubmissionCollection';
 import SubmissionModel from './../models/SubmissionModel';
 import schoolSubmission from './../collections/SchoolSubmissionCollection';
 import user from './../models/UserModel';
+require('react-datetime');
+import moment from 'moment';
 
 
 export default React.createClass({
@@ -48,7 +50,11 @@ export default React.createClass({
 	},
 	render: function() {
 		let userId = this.state.user.get('id');
+
 		const submissionRows = Submission.filter((subs, i, array) => {
+		// 	let date = Submission.get('createdAt');
+		// let formatDate = moment(date).format(MMM Da YYYY);
+		// console.log(formatDate);
 				if (subs.get('userId') === userId) {
 					return true;
 				} else {
