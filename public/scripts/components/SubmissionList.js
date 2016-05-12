@@ -4,9 +4,7 @@ import schools from './../collections/SchoolCollection';
 import Submission from './../collections/SubmissionCollection';
 import schoolSubmission from './../collections/SchoolSubmissionCollection';
 import user from './../models/UserModel';
-import SubmissionItemSchool from './SubmissionItemSchool';
-import SchoolSubmissionCollection from './../collections/SchoolSubmissionCollection';
-import SubmissionItemTalent from './SubmissionItem';
+import SubmissionItem from './SubmissionItemSchool';
 
 export default React.createClass({
 	getInitialState: function(){
@@ -45,23 +43,27 @@ export default React.createClass({
 				}
 			});
     },
+   componentWillUnmount: function() {
+		Submission.off('update');
+		user.off('update');
+		schoolSubmission.off('change');	
+	},
 	render: function() {
 		let schoolId = this.state.user.get('school').id;
-		const submissionRows =Submission.filter((subs, i, array) => {
-				if (subs.get('schoolId') === schoolId && subs.get('status') === 'new') {
-					console.log(schoolId);
+		const submissionRows = Submission.filter((subs, i, array) => {
+				if (subs.get('schoolId') === schoolId) {
 					return true;
 				} else {
 					return false;
 				}
 				}).map((subs, i, array)=>{
 				return (
-					<SubmissionItemTalent
+					<SubmissionItem
 					key = {subs.get('id')}
 					submissionId = {subs.get('id')}
 					id = {subs.get('userId')}
 					title={subs.get('title')}
-					school = {subs.get('school')[0] ? subs.get('school')[0].schoolName : ''}
+					school = {subs.get('school') ? subs.get('school')[0].schoolName : ''}
 					status = {subs.get('status')}
 					url = {subs.get('url')}
 					desc = {subs.get('description')}

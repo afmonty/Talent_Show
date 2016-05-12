@@ -6,6 +6,7 @@ import Submission from './../collections/SubmissionCollection';
 import SubmissionModel from './../models/SubmissionModel';
 import schoolSubmission from './../collections/SchoolSubmissionCollection';
 import user from './../models/UserModel';
+import $ from 'jquery';
 
 
 export default React.createClass({
@@ -42,7 +43,7 @@ export default React.createClass({
 		});
 
     },
-    componentWillUnMount: function() {
+    componentWillUnmount: function() {
 		Submission.off('update');
 		user.off('update');	
 	},
@@ -61,7 +62,7 @@ export default React.createClass({
 					submissionId = {subs.get('id')}
 					id = {subs.get('userId')}
 					title={subs.get('title')}
-					school = {subs.get('school')[0] ? subs.get('school')[0].schoolName : ''}
+					school = {subs.get('school') ? subs.get('school')[0].schoolName : ''}
 					status = {subs.get('status')}
 					message = {subs.get('message') ? subs.get('message'): ''}
 					url = {subs.get('url')}
@@ -85,8 +86,11 @@ export default React.createClass({
 		);
 	},
 	deleteSubmission: function(submissionId) {
-		console.log(submissionId);
+		
 		this.state.Submission.get(submissionId).destroy();
 		
 	}
+	// goDetails: function() {
+	// 	$('.subDetailsContainer').css('display', 'block');
+	// }
 });
