@@ -5,6 +5,7 @@ import Submission from './../collections/SubmissionCollection';
 import schoolSubmission from './../collections/SchoolSubmissionCollection';
 import user from './../models/UserModel';
 import SubmissionItem from './SubmissionItemSchool';
+var moment = require('moment');
 
 export default React.createClass({
 	getInitialState: function(){
@@ -57,6 +58,8 @@ export default React.createClass({
 					return false;
 				}
 				}).map((subs, i, array)=>{
+						let format = moment(subs.get('createdAt'));
+					let dateFormat = format.format('MMM Do YYYY');
 				return (
 					<SubmissionItem
 					key = {subs.get('id')}
@@ -67,7 +70,7 @@ export default React.createClass({
 					status = {subs.get('status')}
 					url = {subs.get('url')}
 					desc = {subs.get('description')}
-					date={subs.get('createdAt')} />
+					date={dateFormat} />
 					);
 			});
 		return (

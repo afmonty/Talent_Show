@@ -6,7 +6,9 @@ import Submission from './../collections/SubmissionCollection';
 import SubmissionModel from './../models/SubmissionModel';
 import schoolSubmission from './../collections/SchoolSubmissionCollection';
 import user from './../models/UserModel';
-import $ from 'jquery';
+//import $ from 'jquery';
+//import {moment} from 'moment';
+var moment = require('moment');
 
 
 export default React.createClass({
@@ -56,6 +58,9 @@ export default React.createClass({
 					return false;
 				}
 				}).map((subs, i, array)=>{
+					let format = moment(subs.get('createdAt'));
+					let dateFormat = format.format('MMM Do YYYY');
+					
 				return (
 					<SubmissionItemTalent
 					key = {subs.get('id')}
@@ -67,7 +72,7 @@ export default React.createClass({
 					message = {subs.get('message') ? subs.get('message'): ''}
 					url = {subs.get('url')}
 					desc = {subs.get('description')}
-					date={subs.get('createdAt')}
+					date={dateFormat}
 					deleteSubmission={this.deleteSubmission}/>
 					);
 			});

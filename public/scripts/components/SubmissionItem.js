@@ -10,7 +10,7 @@ const SubmissionItemTalent = React.createClass({
 		return (
 		<div className = 'itemContainer'>
 			<div className = 'subSpanContainer'>
-				<span className = 'subDate'>{this.props.date}</span>
+				<time className = 'subDate'>{this.props.date}</time>
 				<span className = "subStatus">{this.props.status}</span>
 			</div>
 			
