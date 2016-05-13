@@ -104,6 +104,7 @@ export default React.createClass({
 					//ending options
 					{
 						complete: (user) => {
+							window.alert('Your Submission is complete');
 							browserHistory.push('/TalentRead');
 						}
 					});	

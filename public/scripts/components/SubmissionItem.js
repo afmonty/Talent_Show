@@ -29,7 +29,7 @@ const SubmissionItemTalent = React.createClass({
 		);
 	},
 	goDetails: function(e){
-		browserHistory.push(`/SubmissionDetails/${this.props.submissionId}`);
+		browserHistory.push(`/TalentDetails/${this.props.submissionId}`);
 		//this.props.goDetails(this.props.submissionId);
 	},
 	deleteSubmission: function() {

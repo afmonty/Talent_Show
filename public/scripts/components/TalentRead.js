@@ -6,8 +6,6 @@ import Submission from './../collections/SubmissionCollection';
 import SubmissionModel from './../models/SubmissionModel';
 import schoolSubmission from './../collections/SchoolSubmissionCollection';
 import user from './../models/UserModel';
-//import $ from 'jquery';
-//import {moment} from 'moment';
 var moment = require('moment');
 
 

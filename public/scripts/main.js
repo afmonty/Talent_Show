@@ -11,7 +11,7 @@ import SubmissionDetails from './components/SubmissionDetails.js';
 import Login from './components/Login.js';
 import Register from './components/Registration.js';
 import TalentRead from './components/TalentRead.js';
-
+import TalentDetails from './components/TalentDetails.js';
 import filepicker from 'filepicker-js';
 
 filepicker.setKey('AyvZxLzllQyuCAYDTZxvpz');
@@ -28,6 +28,7 @@ const router = (
 		<Route path="/Submission" component={Submission}/>
 		<Route path="/SubmissionList" component={SubmissionList}/>
 		<Route path="/SubmissionDetails/:submissionId" component={SubmissionDetails}/>
+		<Route path="/TalentDetails/:submissionId" component={TalentDetails}/>
 		<Route path="Login" component={Login}/>
 		<Route path="Registration" component={Register}/>
 		<Route path="/TalentRead" component={TalentRead}/>
