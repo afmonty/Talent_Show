@@ -1,0 +1,33 @@
+
+
+h2, h3 {
+		font-family: Bree Serif;
+		display: inline;
+}
+
+span{
+	font-family: Bree Serif;
+}
+
+a{
+	font-family: Bree Serif;
+	font-size: 14pt;
+}
+
+
+img{
+		width: 100%;
+}
+
+button {
+	background: $ltBlue;
+	color: $darkBlue;
+	border: 2px solid $darkBlue;
+	font-family: Open Sans;
+	&:hover{
+		background: $yellow;
+		color: $black;
+		font-family: Bree Serif;
+	}
+}
+

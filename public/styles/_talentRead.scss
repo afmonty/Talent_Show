@@ -1,38 +1,37 @@
-.talentContainer{
-	.titleContainer{
-		padding-top: 1em;
-		padding-bottom: 1em;
-		max-width: 75%;
-		margin: 0 auto;
-		//position: fixed;
-		// margin-bottom: 2em;
+
+.titleContainer{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	max-width: 75%;
+	margin: 0 auto;
+	//position: fixed;
+	// margin-bottom: 2em;
+	border-bottom: 2px solid #EFEFEF;
+	// span{
+	// 	font-family: Open Sans;
+	// 	color: $darkGrey;
+	// 	margin-left: 1em;
+	// 	margin-right: 7em;
+	// 	font-size: 18pt;
+	// }
+}
+.talentReadContainer{
+	padding-top: 5em;
+	max-width: 75%;
+	margin: 0 auto;
+	.itemContainer{
 		border-bottom: 2px solid #EFEFEF;
-		span{
-			font-family: Open Sans;
-			color: #9696A8;
-			margin-left: 1em;
-			margin-right: 7em;
-			font-size: 18pt;
+		overflow: hidden;
+	}
+	.subSpanContainer{
+		float: right;
+		clear: both;
+		margin-top: .5em;
+		.subStatus{
+			margin-left: .5em;
 		}
 	}
-	.talentReadContainer{
-		padding-top: 5em;
-		max-width: 75%;
-		margin: 0 auto;
-		.itemContainer{
-			border-bottom: 2px solid #EFEFEF;
-			overflow: hidden;
-		}
-		.subSpanContainer{
-			float: right;
-			clear: both;
-			margin-top: .5em;
-			.subStatus{
-				margin-left: .5em;
-			}
-		}
-		.subId{
-			display: none;
-		}
+	.subId{
+		display: none;
 	}
 }

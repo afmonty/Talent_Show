@@ -7,6 +7,9 @@
     "dev": "./node_modules/.bin/gulp dev",
     "config": "./node_modules/.bin/gulp config",
     "build": "./node_modules/.bin/gulp build",
+    "engines": {
+    "node": "5.7.0"
+  },
     "postinstall": "node --use_strict postinstall"
   },
   "devDependencies": {

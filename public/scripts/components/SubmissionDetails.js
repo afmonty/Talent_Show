@@ -19,7 +19,7 @@ export default React.createClass({
 			<main>
 				<Nav/>
 				<section className = 'detailsContainer'>	
-					<h2>Beautiful Dancer</h2>
+					<h2>{this.state.sub.get('title')}</h2>
 					 <span className = 'detailStatus'>{this.state.sub.get('status')}</span>
 					<video className = 'subVideo' src={this.state.sub.get('url')} width="400" height="200" controls></video>
 	 				<p className = 'subdescription'>{this.state.sub.get('description')}</p>
