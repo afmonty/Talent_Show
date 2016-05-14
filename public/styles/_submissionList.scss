@@ -1,3 +1,58 @@
-span{
-	font-family: Bree Serif;
+section{
+	margin-top: 10em;
+	//overflow: hidden;
 }
+
+.schoolRows{
+	overflow: hidden;
+	padding-top: 5em;
+	max-width: 100%;
+}
+.itemContainer{
+	max-width: 75%;
+	cursor: pointer;
+	margin-bottom: 2em;
+	border-bottom: 2px solid $ltGrey;
+}
+.subSpanContainer{
+	width: 100%;
+	margin-bottom: 1em;
+	overflow: hidden;
+	.subDate{
+		float: left;
+	}
+	.subStatus{
+		float: right;
+	}
+}
+.titleAndName{
+	padding: .2em;
+}
+h2{
+	font-size: 20pt;
+	display: inline-block;
+	margin-bottom: 1em;
+	color: $black;
+}
+span{
+	margin-right: .15em;
+	float: right;
+	font-family: Open Sans;
+	color: $darkGrey;
+}
+.subdescription{
+	font-size: 16pt;
+	color: $black;
+	width: 40%;
+	display: inline-block;
+	height: 20%;
+    float: right;
+    margin-top: 1em;
+    border: none;
+}
+.subVideo{
+	display: inline-block;
+}
+
+
+

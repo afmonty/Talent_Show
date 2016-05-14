@@ -64,7 +64,7 @@ export default React.createClass({
 							<textarea className="desc_input" ref = "desc_input" placeholder="Enter a description"></textarea>
 						</div>
 						<div className = "sub-button-container">
-							<button className= "sub-button" >Submit</button>
+							<button className= "sub-button buttonPrimary" >Submit</button>
 							<button className="subCancel" onClick={this.cancel}>Cancel</button>
 						</div>
 				</form>

@@ -36,7 +36,7 @@ export default React.createClass({
 							<Link to="/" className = 'logo'>Talent Show</Link>
 						</div>
 						
-						<Link className="nav-link" to="/SubmissionList">School Submission List</Link>
+						<Link className="nav-link" to="/SubmissionList">{this.state.user.get('school').schoolName}</Link>
 						
 						<div className="nav-reg-link-container">
 							<span className="nav-link">{this.state.user.get('firstName')}</span>
@@ -72,7 +72,7 @@ export default React.createClass({
 									<input className="u-full-width log-password" type="password" placeholder="password" ref='password' title="Password is required and cannot left blank" required="required"/>
 									<div className="error">{this.state.errors.password ? this.state.errors.password.message : null}</div>
 									<div className= 'logregButtonContainer'>
-										<button className="button-primary" type='submit'> Login </button>
+										<button className="buttonPrimary" type='submit'> Login </button>
 			                        	<button onClick={this.closeModal}>Close</button>								
 									</div>
 								</form>
@@ -81,7 +81,9 @@ export default React.createClass({
 						<div className="nav-reg-link-container">
 							<a href = '#' className="nav-link" onClick={this.registerOpenModal}>{this.props.registerModalVisible}Register</a>
 							<Rayon isOpen={this.state.registerModalVisible} onClose={this.closeModal}>
-								<form  className = 'register'> <h1>Register</h1>
+								<form  className = 'register'> 
+								<div className="form-wrapper">
+								<h1>Register</h1>
 				                    <label>First Name</label>
 									<input type = 'text' ref = 'firstName'></input>
 									<label>Last Name</label>
@@ -97,9 +99,12 @@ export default React.createClass({
 										<input type='text' ref = 'address' placeholder ='State'></input>
 									</div>
 									<div className= 'logregButtonContainer'>
+										<div>
 										<button  type = 'button' className = 'showSchool' onClick = {this.showSchool}>Register as a School</button>
-										<button onClick={this.register} type = "submit">Submit</button>
+										</div>
+										<button onClick={this.register} type = "submit" className="buttonPrimary">Submit</button>
 										<button onClick={this.closeModal}>Close</button>
+									</div>
 									</div>
             					</form>	
             				</Rayon>	

@@ -23,9 +23,14 @@ export default React.createClass({
 					 <span className = 'detailStatus'>{this.state.sub.get('status')}</span>
 					<video className = 'subVideo' src={this.state.sub.get('url')} width="500" height="250" controls></video>
 	 				<p className = 'subdescription'>{this.state.sub.get('description')}</p>
+					
+					<textarea 
+					className='subMessage' 
+					placeholder='No Messages'
+					cols='80'
+					rows='70'>
+					</textarea>
 					<button onClick = {this.close}>Back to Your List</button>
-
-
 				</section>
 			</main> 
 		);

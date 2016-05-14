@@ -9,21 +9,25 @@ const SubmissionItemTalent = React.createClass({
 	render: function() {
 		return (
 		<div className = 'itemContainer'>
-			<div className = 'subSpanContainer'>
-				<time className = 'subDate'>{this.props.date}</time>
-				<span className = "subStatus">{this.props.status}</span>
-			</div>
 			
-			<h2 className = "subTitle" onClick = {this.goDetails} >{this.props.title}</h2>
-			<h3 className = "subSchool">{this.props.school}</h3>
+			
+			<h3 className = "subTitle" onClick = {this.goDetails} >{this.props.title}</h3>
+			<h4 className = "subSchool">{this.props.school}</h4>
 			<div className = 'subDetailsContainer' style = {{display: 'none'}}>
 				<video  className = 'subVideo' src={this.props.url} width="400" height="200" controls></video>
 				<p className = 'subdescription'>{this.props.desc}</p>
 			</div>
 			<span style = {{display: 'none'}} className = 'subid'>{this.props.submissionId}</span>
-			<p className = 'subMessage'>{this.props.message}</p>
+
+			<div className = 'subSpanContainer'>
+				<time className = 'subDate'>{this.props.date}</time>
+				<span className = "subStatus">{this.props.status}</span>
+			</div>
 			
-			<button type='button' onClick = {this.deleteSubmission}>Delete this submission</button>
+			<div className="deleteSub">
+				<button className = 'buttonPrimary' type='button' onClick = {this.deleteSubmission}>Delete this submission</button>
+			</div>
+			<p className = 'subMessage'>{this.props.message}</p>
 
 		</div>
 		);

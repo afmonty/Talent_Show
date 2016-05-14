@@ -31,7 +31,7 @@ export default React.createClass({
 				</div>
 				<div className='sendMessageContainer'>
 					<input className='message' placeholder = 'Send a message this person' ref='message'></input>
-					<button type='button' className='acceptRejectbutton' onClick={this.changeStatus}>Send Update to Student</button>
+					<button type='button' className='acceptRejectbutton buttonPrimary' onClick={this.changeStatus}>Send Update to Student</button>
 				</div>
 			</main> 
 		);

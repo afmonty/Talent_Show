@@ -4,7 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory} from 'react-router';
 import Home from './components/Home.js';
-//import App from './components/App.js';
 import Submission from './components/Submission.js';
 import SubmissionList from './components/SubmissionList.js';
 import SubmissionDetails from './components/SubmissionDetails.js';

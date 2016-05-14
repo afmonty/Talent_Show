@@ -35,7 +35,7 @@ export default React.createClass({
 			});
 			Submission.fetch({
 				data: {
-					withRelated: ['school']
+					withRelated: ['school', 'user']
 				}
 			});
 			schoolSubmission.fetch({
@@ -68,19 +68,19 @@ export default React.createClass({
 					title={subs.get('title')}
 					school = {subs.get('school') ? subs.get('school')[0].schoolName : ''}
 					status = {subs.get('status')}
+					name = {subs.get('user').firstName + ' ' +subs.get('user').lastName}
 					url = {subs.get('url')}
 					desc = {subs.get('description')}
 					date={dateFormat} />
 					);
 			});
 		return (
-			<main>
+			<section className = 'row offset-by-one twelve columns'>
 				<Nav/>
-				<h1> {this.state.user.get('school').schoolName}</h1>
-				<div>
+				<div className = 'schoolRows'>
 					{submissionRows}
 				</div>
-			</main>
+			</section>
 		);
 	}
 });

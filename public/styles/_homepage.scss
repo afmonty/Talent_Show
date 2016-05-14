@@ -1,17 +1,24 @@
+
 .homepage{
 	background: url(../../images/stageBW.jpg) no-repeat center center fixed;
-	background-size: cover;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	
 	.display{
-		padding-top: 12em;
 		max-width: 50%;
-		height: 50em;
-		margin: 0 auto;
-		//background: #EFEFEF;
+		padding-left: 25%;
+		padding-right: 25%;
+		background: rgba(0,0,0,0.6);
 		color: white;
+		padding-top: 12em;
+	  	padding-bottom: 30em;
 	}
 	.welcome{
 		font-size: 18px;
 		line-height: 150%;
+		//position: fixed;
 	}
 }
 	//max-width: 1000px;

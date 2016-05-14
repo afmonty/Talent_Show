@@ -1,13 +1,11 @@
 
 
-h2, h3 {
+h2, h3, h4, h5 {
 		font-family: Bree Serif;
 		display: inline;
 }
 
-span{
-	font-family: Bree Serif;
-}
+
 
 a{
 	font-family: Bree Serif;
@@ -15,19 +13,21 @@ a{
 }
 
 
-img{
-		width: 100%;
+img {
+	width: 100%;
 }
 
-button {
-	background: $ltBlue;
-	color: $darkBlue;
-	border: 2px solid $darkBlue;
-	font-family: Open Sans;
-	&:hover{
-		background: $yellow;
-		color: $black;
-		font-family: Bree Serif;
+button.buttonPrimary {
+		background: $ltBlue;
+		color: $darkBlue;
+		border: 2px solid $darkBlue;
+		font-family: Open Sans;
+		height: auto;
+		&:hover{
+			background: $yellow;
+			color: $black;
+		}
 	}
-}
+
+
 

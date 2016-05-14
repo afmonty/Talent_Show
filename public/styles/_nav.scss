@@ -39,7 +39,6 @@ nav{
 		margin-right: 1em;
 	}
 	.rayon-spacer{
-		top: 105px;
 		position: fixed;
 	}
 }
@@ -59,14 +58,20 @@ nav{
 		margin-bottom: .5em;
 	}
 	input{
-		width: 80%;
+		width: 100%;
 		display: block;
 		margin-bottom: .5em;
 	}
 	.logregButtonContainer{
-		float: right;
+		
 		button{
 			margin: .25em;
 		}
 	}
+}
+
+.form-wrapper {
+	width: 80%;
+	margin: 0 auto;
+
 }
