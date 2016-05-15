@@ -1,39 +1,73 @@
-.submissionForm{
-	//background: #EFEFEF;
+.submission_Form{
 	padding-top: 5em;
 	padding-left: 10em;
 	max-width: 75%;
+	width: 100%;
+	margin-top: 7em;
 	margin: 0 auto;
-	
-	.titleContainer{
-		margin-top: .5em;
-		margin-bottom: .5em;
-		h3 {
-			margin-right: 1em;
-		}
+}
+.sub_titleContainer{
+	margin-top: 10em;
+	margin-bottom: .5em;
+	width: 90%;
+	h5 {
+		margin-right: 1em;
+		color: $black;
 	}
-	.school-list{
-		display: inline;
-		margin-left: 10em;
+	.title{
+		margin-left: 2em;
 	}
-	button{
-		margin-left: 10em;
-	}
-	video{
-		border: 1px solid black;
-		display: block;
-		margin: 3em;
-	}
-	.desc_input{
-		display: block;
-		height: 10em;
-		width: 30em;
-		margin-top: 2em;
-		margin-left: 5em;
-	}
-	.sub-button-container{
-		margin-top: 2em;
-		margin-left: 15em;
-		margin-bottom: 5em;
-	}
+}
+.school_list_container{
+	width: 80%;
+}
+.school_list{
+	display: inline;
+	margin-left: 10em;
+}
+.sub_List_title{
+	color: $black;
+}
+select{
+	 margin-left: 6em;
+}
+.sub_selectfile_container{
+	width: 80%;
+}
+.sub_label_file{
+	color: $black;
+}
+.sub_button_file{
+	margin-left: 16em;
+	background: white;
+}
+.video_container{
+	width: 70%
+}
+video{
+	border: 1px solid black;
+	display: block;
+	margin: 3em;
+}
+.sub_desc_label{
+	color: $black;
+}
+.sub_desc_container{
+	width: 80%;
+}
+.sub_desc_input{
+	display: block;
+	height: 10em;
+	width: 80%;
+	margin-top: 2em;
+	//margin-left: 5em;
+}
+.sub_button_container{
+	margin-top: 2em;
+	margin-left: 15em;
+	margin-bottom: 5em;
+}
+.sub_Cancel{
+	background: white;
+	margin-left: 5em;
 }

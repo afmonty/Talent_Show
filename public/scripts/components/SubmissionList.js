@@ -56,7 +56,7 @@ export default React.createClass({
 					return true;
 				} else {
 					return false;
-				}
+    			}	
 				}).map((subs, i, array)=>{
 						let format = moment(subs.get('createdAt'));
 					let dateFormat = format.format('MMM Do YYYY');
@@ -84,3 +84,4 @@ export default React.createClass({
 		);
 	}
 });
+//? submissionRows : 'There are no new submissions'

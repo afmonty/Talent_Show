@@ -12,7 +12,7 @@ import Register from './components/Registration.js';
 import TalentRead from './components/TalentRead.js';
 import TalentDetails from './components/TalentDetails.js';
 import filepicker from 'filepicker-js';
-
+                    
 filepicker.setKey('AyvZxLzllQyuCAYDTZxvpz');
 $.ajaxSetup({
 	headers: {

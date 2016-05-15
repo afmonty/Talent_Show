@@ -18,19 +18,20 @@ export default React.createClass({
 		return (
 			<main>
 				<Nav/>
-				<section className = 'detailsContainer'>	
-					<h2 className = 'subTitle'>{this.state.sub.get('title')}</h2>
-					 <span className = 'detailStatus'>{this.state.sub.get('status')}</span>
-					<video className = 'subVideo' src={this.state.sub.get('url')} width="500" height="250" controls></video>
-	 				<p className = 'subdescription'>{this.state.sub.get('description')}</p>
-					
-					<textarea 
-					className='subMessage' 
-					placeholder='No Messages'
-					cols='80'
-					rows='70'>
-					</textarea>
-					<button onClick = {this.close}>Back to Your List</button>
+				<section className = 'talentdetailsContainer offset-by-two columns ten'>	
+					<div className = 'talentdetailsTitleStatusContainer row'>
+						<h2 className = 'talentdetailssubTitle'>{this.state.sub.get('title')}</h2>
+					 	<span className = 'talentdetailStatus'>{this.state.sub.get('status')}</span>
+					</div>
+					<div className = 'talentdetailsvideoContainer'>
+						<video className = 'talentdetailssubVideo' src={this.state.sub.get('url')} width="800" height="400" controls></video>
+	 					<p className = 'talentdetailssubdescription'>{this.state.sub.get('description')}</p>
+					</div>
+					<div className='talentdetailssubMessage offset-by-three'>{this.state.sub.get('message') ? this.state.sub.get('message') : 'No School Messages'} 
+					</div> 
+					<div className = 'talentdetailsButtonContainer'>
+						<button className='buttonPrimary'onClick = {this.close}>Back to Your List</button>
+					</div>
 				</section>
 			</main> 
 		);

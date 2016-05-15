@@ -1,5 +1,6 @@
 .talentContainer {
 	margin-top: 86px;
+
 }
 .titleContainer{
 	padding-top: 1em;
@@ -7,56 +8,66 @@
 	overflow: hidden;
 	position: fixed;
 	width: 100%;
-	max-width: 75%;
-	margin-left: 12.5%;
-	background-color: #fff;
-	border-bottom: 2px solid #EFEFEF;
+	max-width: 74%;
+	margin-left: 12%;
+	margin-top: 1.5em;
+	background-color: $ltBlue;
+	border-bottom: 2px solid $mdGrey;
+	padding-left: 2em;
 	span{
 		font-family: Open Sans;
 		color: $darkGrey;
-		width: 25%;
+		width: 30%;
 		font-size: 18pt;
 		display: block;
 		float: left;
 	}
-
+.school{
+	text-align: center;
+}
+.status{
+	    float: right;
+    	text-align: center;
+}
 
 }
 .talentReadContainer{
 	padding-top: 5em;
 	max-width: 75%;
 	margin: 0 auto;
-	.itemContainer{
-		border-bottom: 2px solid #EFEFEF;
-		overflow: hidden;
-		padding: 1.5em 0;
-		h3{
-			cursor: pointer;
-			font-size: 1.5em;
-			width: 25%;
-			float: left;
-		}
-		h4{
-			font-size: 1em;
-			width: 25%;
-			float: left;
-		}
-		.deleteSub {
-			width: 25%;
-			float: left;
+}
+.talentitemContainer{
+	border-bottom: 2px solid #EFEFEF;
+	overflow: hidden;
+	padding: 1.5em 0;
+}
+.talentsubTitle{
+	cursor: pointer;
+	font-size: 16pt;
+	width: 30%;
+	float: left;
+}
+.talentsubSchool{
+	font-size: 14pt;
+	width: 30%;
+	float: left;
+	//margin-left: 3em;
+	padding-left: 4em;
+}
+.talentdeleteSub {
+	width: 25%;
+	//float: left;
+}
 
-			button {
-				width: 50%;
-			}
-		}
-	}
-	.subSpanContainer{
-		float: left;
-		width: 25%;
-		.subStatus{
-		}
-	}
-	.subId{
-		display: none;
-	}
+.talentsubSpanContainer{
+	float: left;
+	width: 30%;
+	overflow: hidden;
+	display: block;
+}
+.talentsubStatus, .talentsubDate{
+	margin-right: .2em;
+}
+.subId{
+	display: none;
 }

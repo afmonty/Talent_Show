@@ -16,24 +16,32 @@ export default React.createClass({
 	},
 	render: function() {
 		return (
-			<main>
+			<section >
 				<Nav/>
-				<section className = 'detailsContainer'>	
-					<h2>{this.state.sub.get('title')}</h2>
-					 <span className = 'detailStatus'>{this.state.sub.get('status')}</span>
-					<video className = 'subVideo' src={this.state.sub.get('url')} width="400" height="200" controls></video>
-	 				<p className = 'subdescription'>{this.state.sub.get('description')}</p>
-					<button onClick = {this.close}>Back to Your List</button>
-				</section>
-				<div className='acceptRejectContainer' ref='accept'>
-					<label>Accept<input name ='accept'className='accept' type ='radio' value = 'accept'/></label>
-					<label>Reject<input name ='accept'className='reject' type ='radio' value = 'reject'/></label>
+				<div className = 'schoolDetailsContainer row offset-by-two ten columns'>
+					<div className = 'row detailstitleStatus'>	
+						<h2>{this.state.sub.get('title')}</h2>
+						 <span className = 'detailStatus'>{this.state.sub.get('status')}</span>
+					</div>
+					<div className = 'detailsvideoDescription offset-by-three'>
+						<div className='detailsTextarea'>
+							<div className = 'detailsSubdescription'>{this.state.sub.get('description')}</div>
+						</div>
+						<video className = 'detailsSubVideo' src={this.state.sub.get('url')} width="700" height="350" controls></video>	
+						<textarea className='detailsMessage' placeholder = 'Send a message this person' ref='message'></textarea>
+					</div>
+					<div className='detailsAcceptRejectContainer row offset-by-three' ref='accept'>
+						<label className = 'detailsChoiceAccept'>Accept</label>
+						<input name ='accept'className='detailsAccept' type ='radio' value = 'accept'/>
+						<label className = 'detailsChoiceReject'>Reject</label>
+						<input name ='accept'className='detailsReject' type ='radio' value = 'reject'/>
+					</div>
+					<div className='detailsButtonContainer'>
+						<button className = 'detailsList' onClick = {this.close}>Back to Your List</button>
+						<button type='button' className='detailsAcceptRejectbutton buttonPrimary' onClick={this.changeStatus}>Send Update to Student</button>
+					</div>
 				</div>
-				<div className='sendMessageContainer'>
-					<input className='message' placeholder = 'Send a message this person' ref='message'></input>
-					<button type='button' className='acceptRejectbutton buttonPrimary' onClick={this.changeStatus}>Send Update to Student</button>
-				</div>
-			</main> 
+			</section> 
 		);
 	},
 	close: function () {

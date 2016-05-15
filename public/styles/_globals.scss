@@ -1,4 +1,6 @@
-
+body{
+	background: $ltBlue;
+}
 
 h2, h3, h4, h5 {
 		font-family: Bree Serif;
@@ -10,6 +12,7 @@ h2, h3, h4, h5 {
 a{
 	font-family: Bree Serif;
 	font-size: 14pt;
+	color: white;
 }
 
 
@@ -18,11 +21,12 @@ img {
 }
 
 button.buttonPrimary {
-		background: $ltBlue;
+		background: $ltGrey;
 		color: $darkBlue;
 		border: 2px solid $darkBlue;
 		font-family: Open Sans;
 		height: auto;
+		width: auto;
 		&:hover{
 			background: $yellow;
 			color: $black;

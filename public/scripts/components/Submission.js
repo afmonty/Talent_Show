@@ -39,33 +39,37 @@ export default React.createClass({
 		return (
 			<main>
 				<Nav/>
-				<form className = "submissionForm" onSubmit = {this.submit}>
-					<div className='titleContainer'>
-						<h3 className='titleLabel'>Enter a Title for your submission</h3>
-						<input className ='title' type='text' ref='title' placeholder='Submission Title'/>
+				<form className = "submission_Form" onSubmit = {this.submit}>
+					<div className='sub_titleContainer row'>
+						<h5 className='sub_titleLabel'>Enter a Title for your submission</h5>
+						<input className ='title offset-by-five' type='text' ref='title' placeholder='Submission Title'/>
 					</div>
-					<h3> Select a school </h3>
-						<div className="school-list">	
+					<div className = 'school_list_container'>
+						<h5 className = 'sub_List_title'> Select a school </h5>
+						<div className="school_list">	
 							<select name="mydropdown" ref = 'school'>
 								<option value="Pick">Go to Schools</option>
 										{schoolList}
 							</select>
-							<div></div>
+							
 						</div>
-						<div className="video-container">
-							<h3> Select a file to upload</h3>
-							<button type = 'button' onClick = {this.upload}>Select File</button>
-							<video src={this.state.url} width="350" height="175" controls>
-								<p>If you are reading this, it is because your browser does not support the HTML5 video element.</p>
-							</video>
+					</div>
+					<div className = 'sub_selectfile_container'>
+							<h5 className = 'sub_label_file'> Select a file to upload</h5>
+
+						<button className = 'sub_button_file' type = 'button' onClick = {this.upload}>Select File</button>
+					</div>	
+					<div className="video_container"><video src={this.state.url} width="600" height="300" controls>
+							<p>If you are reading this, it is because your browser does not support the HTML5 video element.</p>
+						</video>
+					</div>
+						<div className="sub_desc_container">
+							<h5 className="sub_desc_label">Enter a description for your submission</h5>
+							<textarea className="sub_desc_input" ref = "desc_input" placeholder="Enter a description"></textarea>
 						</div>
-						<div className="sub-desc-container">
-							<h3 className="desc_label">Enter a description for your submission</h3>
-							<textarea className="desc_input" ref = "desc_input" placeholder="Enter a description"></textarea>
-						</div>
-						<div className = "sub-button-container">
-							<button className= "sub-button buttonPrimary" >Submit</button>
-							<button className="subCancel" onClick={this.cancel}>Cancel</button>
+						<div className = "sub_button_container">
+							<button className= "buttonPrimary" >Submit</button>
+							<button className="sub_Cancel" onClick={this.cancel}>Cancel</button>
 						</div>
 				</form>
 			</main>

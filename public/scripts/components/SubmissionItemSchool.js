@@ -18,7 +18,7 @@ const SubmissionItem = React.createClass({
 			</div>
 			<div className='videoContainer row'>
 				<video className = 'subVideo' src={this.props.url} height= '200' controls></video>
-				<textarea className = 'subdescription offset-by-nine' rows = '4'>{this.props.desc}</textarea>
+				<p className = 'subdescription offset-by-nine' >{this.props.desc}</p>
 			</div>
 			
 			<span style = {{display: 'none'}}className = 'subid'>{this.props.submissionId}</span>

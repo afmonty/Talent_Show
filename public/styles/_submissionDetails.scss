@@ -1,11 +1,46 @@
-section{
-	margin-top: 10em;
+.schoolDetailsContainer{
+	margin-top: 3em;
+	//position: fixed;
 }
-div{
-	span{
-		display: block;
-	}
-	input{
-		margin-right: 2em;
-	}
+.detailstitleStatus{
+	width: 70%;
+}
+
+.detailsvideoDescription{
+	width: 75%;
+	text-align: center;
+}
+.detailsSubdescription{
+	margin-top: 2em;
+	width: 75%;
+	font-family: Open Sans;
+	font-size: 16pt;
+	margin-bottom: 2em;
+}
+.detailsMessage{
+	width: 80%;
+	margin-top: 2em;
+}
+.detailsAcceptRejectContainer{
+	width: 75%;
+	//padding-left: 10em;
+	text-align: center;
+}
+.detailsAccept, .detailsReject{
+	margin: 2em;
+	display: inline-block;
+}
+.detailsChoiceAccept, .detailsChoiceReject{
+	display: inline-block;
+}
+.detailsButtonContainer{
+	width: 80%;
+	text-align: center;
+}
+.detailsList{
+	//margin-left: 10em;
+	
+}
+.detailsAcceptRejectbutton{
+	margin-left: 10em;
 }

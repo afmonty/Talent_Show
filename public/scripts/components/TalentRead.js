@@ -17,7 +17,8 @@ export default React.createClass({
 			submissionModel: new SubmissionModel(),
 			SchoolSubmission: schoolSubmission,
 			url: '',
-			user: user
+			user: user,
+			sort: status
 		};
 	},
 	componentDidMount: function () {
@@ -28,7 +29,8 @@ export default React.createClass({
 		});
 		Submission.on('update', () => {
 			this.setState({
-				Submission: Submission
+				Submission: Submission,
+				sort: status
 			});
 		});
 		this.state.submissionModel.on('change', () => {
@@ -58,7 +60,8 @@ export default React.createClass({
 				}).map((subs, i, array)=>{
 					let format = moment(subs.get('createdAt'));
 					let dateFormat = format.format('MMM Do YYYY');
-					
+					//var sort = subs.get('status');
+					//console.log(sort);
 				return (
 					<SubmissionItemTalent
 					key = {subs.get('id')}
@@ -80,7 +83,7 @@ export default React.createClass({
 				<div className = 'titleContainer'>
 					<span className='title'>Submission</span>
 					<span className='school'>School</span>
-					<span className='status'>Status</span>
+					<span onClick = {this.sort} className='status'>Status</span>
 				</div>
 				<div className = 'talentReadContainer'>
 						{submissionRows}
@@ -93,7 +96,22 @@ export default React.createClass({
 		this.state.Submission.get(submissionId).destroy();
 		
 	}
-	// goDetails: function() {
-	// 	$('.subDetailsContainer').css('display', 'block');
-	// }
+	// sort: function(sort) {
+	// 	this.setState({Submission: Submission});
+	// 	console.log(sort);
+ //  		//console.log(this.state.Submission.get(status));
+ //  	}
+
 });
+
+
+
+
+
+
+
+
+
+
+
+

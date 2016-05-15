@@ -10,7 +10,7 @@ nav{
 	.nav-logo {
 		max-width: 10em;
 		max-height: 6em;
-		padding: 1em;
+		padding: 2em;
 		float: left;
 		margin-right: 1em;
 		transform: rotate(-25deg);
@@ -26,6 +26,7 @@ nav{
 	span{
 		font-size: 14pt;
 		font-family: Bree Serif;
+		color: white;
 	}
 	.nav-link{
 		float: left;
@@ -42,30 +43,44 @@ nav{
 		position: fixed;
 	}
 }
+.logreg{
+	color: $black;
+}
 //login
 .login-box{
 	padding: 5em;
+	background: $ltBlue;
+
 	input{
 		margin-bottom: .5em;
-		width: 50%;
+		width: 100%;
 	}
+}
+.navLoginClose{
+	background: white;
+	margin-left: 2em;
 }
 //registration
 .register{
 	padding: 2em;
+	background: $ltBlue;
 	label{
 		display: block;
 		margin-bottom: .5em;
+		color: $black;
 	}
 	input{
 		width: 100%;
 		display: block;
 		margin-bottom: .5em;
+		background-color: rgb(250, 255, 189)
 	}
 	.logregButtonContainer{
 		
 		button{
 			margin: .25em;
+			background: #fff;
+			color: $black;
 		}
 	}
 }

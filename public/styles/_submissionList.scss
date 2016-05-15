@@ -1,6 +1,7 @@
 section{
 	margin-top: 10em;
 	//overflow: hidden;
+
 }
 
 .schoolRows{
@@ -12,7 +13,8 @@ section{
 	max-width: 75%;
 	cursor: pointer;
 	margin-bottom: 2em;
-	border-bottom: 2px solid $ltGrey;
+	padding-bottom: 2em;
+	border-bottom: 2px solid $mdGrey;
 }
 .subSpanContainer{
 	width: 100%;

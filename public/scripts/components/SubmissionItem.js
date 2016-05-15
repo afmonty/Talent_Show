@@ -8,27 +8,27 @@ import {browserHistory} from 'react-router';
 const SubmissionItemTalent = React.createClass({
 	render: function() {
 		return (
-		<div className = 'itemContainer'>
+		<div className = 'talentitemContainer'>
 			
 			
-			<h3 className = "subTitle" onClick = {this.goDetails} >{this.props.title}</h3>
-			<h4 className = "subSchool">{this.props.school}</h4>
-			<div className = 'subDetailsContainer' style = {{display: 'none'}}>
+			<h3 className = "talentsubTitle" onClick = {this.goDetails} >{this.props.title}</h3>
+			<h4 className = "talentsubSchool">{this.props.school}</h4>
+			<div className = 'talentsubDetailsContainer' style = {{display: 'none'}}>
 				<video  className = 'subVideo' src={this.props.url} width="400" height="200" controls></video>
-				<p className = 'subdescription'>{this.props.desc}</p>
+				<p className = 'talentsubdescription'>{this.props.desc}</p>
 			</div>
 			<span style = {{display: 'none'}} className = 'subid'>{this.props.submissionId}</span>
 
-			<div className = 'subSpanContainer'>
-				<time className = 'subDate'>{this.props.date}</time>
-				<span className = "subStatus">{this.props.status}</span>
+			<div className = 'talentsubSpanContainer'>
+				<span className = "talentsubStatus">{this.props.status}</span>
+				<span className = 'talentsubDate'>{this.props.date}</span>
 			</div>
 			
-			<div className="deleteSub">
-				<button className = 'buttonPrimary' type='button' onClick = {this.deleteSubmission}>Delete this submission</button>
+			<div className="talentdeleteSub">
+				<button className = ' talentButton buttonPrimary' type='button' onClick = {this.deleteSubmission}>Delete this submission</button>
 			</div>
-			<p className = 'subMessage'>{this.props.message}</p>
-
+			<p className = 'talentsubMessage' style = {{display: 'none'}}>{this.props.message}</p>
+ 
 		</div>
 		);
 	},
@@ -39,6 +39,9 @@ const SubmissionItemTalent = React.createClass({
 	deleteSubmission: function() {
 		this.props.deleteSubmission(this.props.submissionId);
 	}
+	// sort: function(e){
+	// 	this.props.status;
+	// }
 	
 });
 

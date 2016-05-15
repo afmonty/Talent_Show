@@ -1,5 +1,41 @@
-.detailsContainer{
-	margin: 15em auto;
+.talentdetailsContainer{
+	margin-top: 15em;
 	width: 60%;
 
+}
+.talentdetailsTitleStatusContainer{
+	width: 60%;
+	padding-left: 5em;
+}
+.talentdetailssubTitle{
+	display: inline-block;
+	color: $black;
+}
+.talentdetailsvideoContainer{
+	width: 75%;
+	text-align: center;
+}
+.talentdetailssubVideo{
+	margin-bottom: 2em;
+}
+.talentdetailssubdescription{
+	font-size: 15pt;
+	color: $black;
+}
+.talentdetailsButtonContainer{
+	width: 60%;
+	text-align: right;
+	paddding-right: 2em;
+}
+
+.talentdetailssubMessage{
+	background: #fff;
+	border: 1px solid $mdGrey;
+	font-size: 14pt;
+	font-family: Open Sans;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	width: 60%;
+	color: $darkGrey;
+	margin-left: 5em;
 }
