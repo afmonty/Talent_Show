@@ -10,18 +10,21 @@
 		max-width: 50%;
 		padding-left: 25%;
 		padding-right: 25%;
-		background: rgba(0,0,0,0.6);
-		color: white;
+		background: rgba(0,0,0,0.6);	
 		padding-top: 12em;
 	  	padding-bottom: 30em;
+	  	color: white;
+	}
+	.greeting{
+		color: #fff;
+		margin-bottom: 1em;
 	}
 	.welcome{
 		font-size: 18px;
 		line-height: 150%;
 		color: white;
-		position: fixed;
-		width: 50%
+		//margin-top: 2em;
+		// width: 100%;
 	}
 }
-	//max-width: 1000px;
-	//margin: 0 auto;
+	

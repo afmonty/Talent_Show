@@ -37,7 +37,7 @@
 	margin: 0 auto;
 }
 .talentitemContainer{
-	border-bottom: 2px solid #EFEFEF;
+	border-bottom: 2px solid $mdGrey;
 	overflow: hidden;
 	padding: 1.5em 0;
 }
@@ -47,6 +47,9 @@
 	width: 30%;
 	float: left;
 }
+.talentsubTitle:hover{
+		text-decoration: underline;
+	}
 .talentsubSchool{
 	font-size: 14pt;
 	width: 30%;
