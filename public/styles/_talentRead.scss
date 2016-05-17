@@ -1,36 +1,32 @@
 .talentContainer {
-	margin-top: 86px;
+	margin-top: 100px;
 
 }
 .titleContainer{
 	padding-top: 1em;
 	padding-bottom: 1em;
+	padding-left: 12em;
 	overflow: hidden;
 	position: fixed;
 	width: 100%;
-	max-width: 74%;
-	margin-left: 12%;
-	margin-top: 1.5em;
-	background-color: $ltBlue;
+	// max-width: 74%;
+	//margin-left: 12%;
+	//margin-top: 1.5em;
+	background-color: #fff;
 	border-bottom: 2px solid $mdGrey;
-	padding-left: 2em;
 	span{
 		font-family: Open Sans;
 		color: $darkGrey;
 		width: 30%;
 		font-size: 18pt;
-		display: block;
+		//display: block;
 		float: left;
+		//margin-right: 1em;
+
 	}
-.school{
-	text-align: center;
-}
-.status{
-	    float: right;
-    	text-align: center;
-}
 
 }
+
 .talentReadContainer{
 	padding-top: 5em;
 	max-width: 75%;
@@ -39,23 +35,26 @@
 .talentitemContainer{
 	border-bottom: 2px solid $mdGrey;
 	overflow: hidden;
-	padding: 1.5em 0;
+	padding-top: 1.5em;
+    margin-left: 1.7em;
 }
 .talentsubTitle{
 	cursor: pointer;
 	font-size: 16pt;
-	width: 30%;
+	color: $darkBlue;
+	font-family: Open Sans;
+	width: 24%;
 	float: left;
 }
 .talentsubTitle:hover{
-		text-decoration: underline;
+	text-decoration: underline;
 	}
 .talentsubSchool{
 	font-size: 14pt;
-	width: 30%;
-	float: left;
-	//margin-left: 3em;
+	width: 24%;
+	font-family: Open Sans;
 	padding-left: 4em;
+	color: $darkBlue;
 }
 .talentdeleteSub {
 	width: 25%;
@@ -63,13 +62,19 @@
 }
 
 .talentsubSpanContainer{
-	float: left;
-	width: 30%;
+	float: right;
+	width: 24%;
 	overflow: hidden;
 	display: block;
+	padding-right: 3em;
 }
-.talentsubStatus, .talentsubDate{
-	margin-right: .2em;
+.talentsubStatus{
+ 	margin-right: .4em;
+	color: $darkBlue;
+}
+.talentsubDate{
+	margin-right: 1.75em;
+	color: $darkBlue;
 }
 .subId{
 	display: none;

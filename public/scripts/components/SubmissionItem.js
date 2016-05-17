@@ -25,7 +25,7 @@ const SubmissionItemTalent = React.createClass({
 			</div>
 			
 			<div className="talentdeleteSub">
-				<button className = ' talentButton buttonPrimary' type='button' onClick = {this.deleteSubmission}>Delete this submission</button>
+				<button className = ' talentButton buttonPrimary' type='button' onClick = {this.deleteSubmission}>Delete</button>
 			</div>
 			<p className = 'talentsubMessage' style = {{display: 'none'}}>{this.props.message}</p>
  
