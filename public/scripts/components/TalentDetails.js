@@ -27,7 +27,7 @@ export default React.createClass({
 						<video className = 'talentdetailssubVideo' src={this.state.sub.get('url')} width="800" height="400" controls></video>
 	 					<p className = 'talentdetailssubdescription'>{this.state.sub.get('description')}</p>
 					</div>
-					<div className='talentdetailssubMessage offset-by-three'>{this.state.sub.get('message') ? this.state.sub.get('message') : 'No School Messages'} 
+					<div className='talentdetailssubMessage'>{this.state.sub.get('message') ? this.state.sub.get('message') : 'No School Messages'} 
 					</div> 
 					<div className = 'talentdetailsButtonContainer'>
 						<button className='buttonPrimary'onClick = {this.close}>Back to Your List</button>

@@ -7,53 +7,62 @@ section{
 .schoolRows{
 	overflow: hidden;
 	padding-top: 5em;
-	max-width: 100%;
+	width: 80%;
 }
 .itemContainer{
-	max-width: 75%;
+	//max-width: 75%;
 	cursor: pointer;
 	margin-bottom: 2em;
 	padding-bottom: 2em;
 	border-bottom: 2px solid $mdGrey;
 }
 .subSpanContainer{
-	width: 100%;
+	//width: 100%;
 	margin-bottom: 1em;
 	overflow: hidden;
 	.subDate{
 		float: left;
+		color: $darkBlue;
 	}
 	.subStatus{
 		float: right;
+		color: $darkBlue;
 	}
 }
 .titleAndName{
 	padding: .2em;
 }
-h2{
+.subTitle{
 	font-size: 20pt;
+	font-family: Open Sans;
 	display: inline-block;
 	margin-bottom: 1em;
-	color: $black;
+	color: $darkBlue;
 }
-span{
+.subTalentName{
 	margin-right: .15em;
 	float: right;
 	font-family: Open Sans;
-	color: $darkGrey;
+	color: $darkBlue;
 }
 .subdescription{
-	font-size: 16pt;
-	color: $black;
-	width: 40%;
+	font-size: 14pt;
+	color: $darkBlue;
+	width: 35%;
 	display: inline-block;
-	height: 20%;
+	height: 7em;
     float: right;
-    margin-top: 1em;
-    border: none;
+    border: .5px solid $darkBlue;
+    background: $ltGrey;
+    overflow-x: scroll;
+    margin-top: 0;
+    height: 9.5em;
+    margin-bottom: 0;
 }
 .subVideo{
 	display: inline-block;
+	width: 400px;
+	height: 200px;
 }
 
 

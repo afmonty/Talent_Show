@@ -18,16 +18,18 @@ export default React.createClass({
 		return (
 			<section >
 				<Nav/>
-				<div className = 'schoolDetailsContainer row offset-by-two ten columns'>
+				<div className = 'schoolDetailsContainer'>
 					<div className = 'row detailstitleStatus'>	
-						<h2>{this.state.sub.get('title')}</h2>
+						<h2 className = 'detailsTitle'>{this.state.sub.get('title')}</h2>
 						 <span className = 'detailStatus'>{this.state.sub.get('status')}</span>
 					</div>
-					<div className = 'detailsvideoDescription offset-by-three'>
-						<div className='detailsTextarea'>
-							<div className = 'detailsSubdescription'>{this.state.sub.get('description')}</div>
-						</div>
+					<div className='detailsTextarea'>
+						<div className = 'detailsSubdescription'>{this.state.sub.get('description')}</div>
+					</div>
+					<div className = 'detailsVid'>
 						<video className = 'detailsSubVideo' src={this.state.sub.get('url')} width="700" height="350" controls></video>	
+					</div>
+					<div className = 'detailsMessageContainer'>
 						<textarea className='detailsMessage' placeholder = 'Send a message this person' ref='message'></textarea>
 					</div>
 					<div className='detailsAcceptRejectContainer row offset-by-three' ref='accept'>

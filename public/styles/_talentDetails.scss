@@ -1,6 +1,6 @@
 .talentdetailsContainer{
-	margin-top: 15em;
-	width: 60%;
+	margin-top: 12em;
+	width: 100%;
 
 }
 .talentdetailsTitleStatusContainer{
@@ -8,8 +8,10 @@
 	padding-left: 5em;
 }
 .talentdetailssubTitle{
+	font-family: Open Sans;
+	font-size: 18pt;
 	display: inline-block;
-	color: $black;
+	color: $darkBlue;
 }
 .talentdetailsvideoContainer{
 	width: 75%;
@@ -20,12 +22,14 @@
 }
 .talentdetailssubdescription{
 	font-size: 15pt;
-	color: $black;
+	color: $darkBlue;
+	text-align: left;
 }
 .talentdetailsButtonContainer{
 	width: 60%;
 	text-align: right;
-	paddding-right: 2em;
+	padding-right: 2em;
+	margin-bottom: 2em;
 }
 
 .talentdetailssubMessage{

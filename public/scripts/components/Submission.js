@@ -61,7 +61,7 @@ export default React.createClass({
 						</div>	
 					</div>
 					<div className="video_container">
-						<video src={this.state.url} width="600" height="300" controls>
+						<video className = 'sub_video' src={this.state.url} width="600" height="300" controls>
 							<p>If you are reading this, it is because your browser does not support the HTML5 video element.</p>
 						</video>
 					</div>

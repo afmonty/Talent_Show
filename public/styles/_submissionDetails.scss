@@ -1,33 +1,52 @@
 .schoolDetailsContainer{
-	margin-top: 3em;
-	//position: fixed;
+	margin-top: 10em;
+	width: 80%;
+	//margin-left: 10em;
+	margin: 0 auto;
 }
 .detailstitleStatus{
-	width: 70%;
-}
-
-.detailsvideoDescription{
 	width: 75%;
-	//text-align: center;
+	margin: 0 auto;
+}
+.detailsTitle{
+	font-family: Open Sans;
+	color: $darkBlue;
+	float: left;
+}
+.detailStatus{
+	float: right;
+	color: $darkBlue;
+	font-size: 12pt;
+}
+.detailsTextarea{
+	width: 75%;
+	margin: 0 auto;
+	text-align: left;
 }
 .detailsSubdescription{
 	margin-top: 2em;
-	width: 75%;
+	width: 100%;
 	font-family: Open Sans;
-	font-size: 16pt;
+	font-size: 14pt;
+	color: $darkBlue;
 	margin-bottom: 2em;
 }
-.detailsSubVideo{
-	
+.detailsVid{
+	margin: 0 auto;
+	width: 75%;
+	//padding-left: 5em;
+}
+.detailsMessageContainer{
+	width: 75%;
+	margin: 0 auto;
 }
 .detailsMessage{
-	width: 80%;
-	margin-top: 2em;
+	width: 100%;
 }
 .detailsAcceptRejectContainer{
 	width: 75%;
-	//padding-left: 10em;
 	text-align: center;
+	margin: 0 auto;
 }
 .detailsAccept, .detailsReject{
 	margin: 2em;
@@ -35,10 +54,15 @@
 }
 .detailsChoiceAccept, .detailsChoiceReject{
 	display: inline-block;
+	color: $darkBlue;
+	font-size: 14pt;
+	font-family: Open Sans;
+
 }
 .detailsButtonContainer{
 	width: 80%;
 	text-align: center;
+	margin: 0 auto;
 }
 .detailsList{
 	//margin-left: 10em;
