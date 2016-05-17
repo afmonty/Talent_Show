@@ -75,8 +75,11 @@ export default React.createClass({
 					);
 			});
 		return (
-			<section className = 'row offset-by-one twelve columns'>
+			<section className = 'schoolSubmissionList'>
 				<Nav/>
+				<div className = 'schoolSubmissionListContainer'>
+					Submissions
+				</div>
 				<div className = 'schoolRows'>
 					{submissionRows}
 				</div>

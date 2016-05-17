@@ -13,8 +13,10 @@ const SubmissionItem = React.createClass({
 			</div>
 			<div className = 'titleAndName row'>
 				<h2 className = "subTitle">{this.props.title}</h2>
-				<span className = 'subTalentName'>{this.props.name} </span> 
-				<span className = 'subTalentName'>Submitted by: </span>
+				<div className = 'subTalentNameContainer'>
+					<span className = 'subTalentName'>Submitted by: </span>
+					<span className = 'subTalentName'>{this.props.name} </span> 
+				</div>
 			</div>
 			<div className='videoContainer row'>
 				<video className = 'subVideo' src={this.props.url}  controls></video>

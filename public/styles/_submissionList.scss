@@ -1,16 +1,28 @@
 section{
-	margin-top: 10em;
+	margin-top: 116px;
 	//overflow: hidden;
 
 }
-
+.schoolSubmissionListContainer{
+	width: 100%;
+	font-family: Open Sans;
+	font-size: 18pt;
+	background: #fff;
+	border-bottom: 2px solid $mdGrey;
+	position: fixed;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-left: 3em;
+	color: $darkGrey;
+}
 .schoolRows{
 	overflow: hidden;
 	padding-top: 5em;
-	width: 80%;
+	//width: 80%;
 }
 .itemContainer{
-	//max-width: 75%;
+	margin-left: 5em;
+    width: 90%;
 	cursor: pointer;
 	margin-bottom: 2em;
 	padding-bottom: 2em;
@@ -41,22 +53,22 @@ section{
 }
 .subTalentName{
 	margin-right: .15em;
-	float: right;
+	//float: right;
 	font-family: Open Sans;
 	color: $darkBlue;
 }
 .subdescription{
 	font-size: 14pt;
 	color: $darkBlue;
-	width: 35%;
+	width: 75%;
 	display: inline-block;
-	height: 7em;
-    float: right;
+	height: 3em;
+    //float: right;
     border: .5px solid $darkBlue;
     background: $ltGrey;
     overflow-x: scroll;
     margin-top: 0;
-    height: 9.5em;
+    //height: 9.5em;
     margin-bottom: 0;
 }
 .subVideo{
