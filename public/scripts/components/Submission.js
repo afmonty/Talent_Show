@@ -40,26 +40,28 @@ export default React.createClass({
 			<main>
 				<Nav/>
 				<form className = "submission_Form" onSubmit = {this.submit}>
-					<div className='sub_titleContainer row'>
-						<h5 className='sub_titleLabel'>Enter a Title for your submission</h5>
-						<input className ='title offset-by-five' type='text' ref='title' placeholder='Submission Title'/>
-					</div>
-					<div className = 'school_list_container'>
-						<h5 className = 'sub_List_title'> Select a school </h5>
-						<div className="school_list">	
-							<select name="mydropdown" ref = 'school'>
-								<option value="Pick">Go to Schools</option>
-										{schoolList}
-							</select>
-							
+					<div className = 'inputBox'>
+						<div className='sub_titleContainer row'>
+							<h5 className='sub_titleLabel'>Enter a Title for your submission</h5>
+							<input className ='title' type='text' ref='title' placeholder='Submission Title'/>
 						</div>
-					</div>
-					<div className = 'sub_selectfile_container'>
+						<div className = 'school_list_container row'>
+							<h5 className = 'sub_List_title'> Select a school </h5>
+							<div className="school_list">	
+								<select name="mydropdown" ref = 'school'>
+									<option value="Pick">Go to Schools</option>
+											{schoolList}
+								</select>
+								
+							</div>
+						</div>
+						<div className = 'sub_selectfile_container row'>
 							<h5 className = 'sub_label_file'> Select a file to upload</h5>
-
-						<button className = 'sub_button_file' type = 'button' onClick = {this.upload}>Select File</button>
-					</div>	
-					<div className="video_container"><video src={this.state.url} width="600" height="300" controls>
+							<button className = 'sub_button_file' type = 'button' onClick = {this.upload}>Select File</button>
+						</div>	
+					</div>
+					<div className="video_container">
+						<video src={this.state.url} width="600" height="300" controls>
 							<p>If you are reading this, it is because your browser does not support the HTML5 video element.</p>
 						</video>
 					</div>

@@ -25,9 +25,9 @@ export default React.createClass({
 				});
 			});	
     	},
-    	componentWillUnmount:function(){
-    		this.state.user.off('update');
-    	},
+    	//componentWillUnmount:function(){
+    	// 	this.state.user.off('update');
+    	// },
 		render: function(){
 			if(this.state.user.get('userType') === 'school'){
 				return (
