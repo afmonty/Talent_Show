@@ -18,6 +18,7 @@ I am using React with Backbone collections and models to create an application w
 * bookshelf
 * filestack
 * skeleton
+* node
 
 ### Data model
 ![](./talent_show)
@@ -29,4 +30,8 @@ I am using React with Backbone collections and models to create an application w
 ### User Stories
 [Talent Show Trello Board](https://trello.com/b/GEqrbgjG/talent-show)
 
+### Style Tile
+![](./public/images/styleTile)
+Inspired by:
+[Amalie Barras](http://www.opentil.es/tile/6/SpokeUp)
 
