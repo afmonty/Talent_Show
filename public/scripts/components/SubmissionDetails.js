@@ -27,7 +27,7 @@ export default React.createClass({
 						<div className = 'detailsSubdescription'>{this.state.sub.get('description')}</div>
 					</div>
 					<div className = 'detailsVid'>
-						<video className = 'detailsSubVideo' src={this.state.sub.get('url')} width="700" height="350" controls></video>	
+						<video className = 'detailsSubVideo' src={this.state.sub.get('url')} controls></video>	
 					</div>
 					<div className = 'detailsMessageContainer'>
 						<textarea className='detailsMessage' placeholder = 'Send a message this person' ref='message'></textarea>

@@ -24,7 +24,7 @@ export default React.createClass({
 					 	<span className = 'talentdetailStatus'>{this.state.sub.get('status')}</span>
 					</div>
 					<div className = 'talentdetailsvideoContainer'>
-						<video className = 'talentdetailssubVideo' src={this.state.sub.get('url')} width="800" height="400" controls></video>
+						<video className = 'talentdetailssubVideo' src={this.state.sub.get('url')} controls></video>
 	 					<p className = 'talentdetailssubdescription'>{this.state.sub.get('description')}</p>
 					</div>
 					<div className='talentdetailssubMessage'>{this.state.sub.get('message') ? this.state.sub.get('message') : 'No School Messages'} 

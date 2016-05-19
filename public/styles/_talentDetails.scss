@@ -4,32 +4,37 @@
 
 }
 .talentdetailsTitleStatusContainer{
-	width: 60%;
-	padding-left: 5em;
+	width: 100%;
+	margin: 0 auto;
 }
 .talentdetailssubTitle{
 	font-family: Open Sans;
 	font-size: 18pt;
 	display: inline-block;
 	color: $darkBlue;
+	float: left;
+	margin-right: 23.3em;
 }
 .talentdetailStatus{
 	font-family: Open Sans;
 	font-size: 12pt;
 	color: $darkBlue;
-	float: right;
+	float: left;
 }
 .talentdetailsvideoContainer{
-	width: 75%;
-	text-align: center;
+	margin: 0 auto;
 }
 .talentdetailssubVideo{
 	margin-bottom: 2em;
+	width: 723px;
+	height: 400px;
+
 }
 .talentdetailssubdescription{
-	font-size: 15pt;
+	font-size: 16pt;
 	color: $darkBlue;
 	text-align: left;
+	margin: 0 auto;
 }
 .talentdetailsButtonContainer{
 	width: 60%;
@@ -43,9 +48,7 @@
 	border: 1px solid $mdGrey;
 	font-size: 14pt;
 	font-family: Open Sans;
-	margin-top: 2em;
 	margin-bottom: 2em;
 	width: 60%;
 	color: $darkGrey;
-	margin-left: 5em;
 }

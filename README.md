@@ -23,7 +23,6 @@ I am using React with Backbone collections and models to create an application w
 ### Data model
 ![](./talent_show)
 
-
 ### Wireframes
 [Talent Show wire frames](./Final Project.pdf)
 
@@ -31,7 +30,8 @@ I am using React with Backbone collections and models to create an application w
 [Talent Show Trello Board](https://trello.com/b/GEqrbgjG/talent-show)
 
 ### Style Tile
-![](./public/images/styleTile.png)
 Inspired by:
 [Amalie Barras](http://www.opentil.es/tile/6/SpokeUp)
+![](./public/images/styleTile.png)
+
 

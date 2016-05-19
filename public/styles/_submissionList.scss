@@ -14,6 +14,7 @@ section{
 	padding-bottom: .5em;
 	padding-left: 3em;
 	color: $darkGrey;
+	z-index: 1;
 }
 .schoolRows{
 	overflow: hidden;
@@ -59,12 +60,13 @@ section{
 }
 .subdescription{
 	font-size: 14pt;
+	padding: 0.5em;
 	color: $darkBlue;
 	width: 75%;
-	display: inline-block;
+	display: block;
 	height: 3em;
     //float: right;
-    border: .5px solid $darkBlue;
+    //border: .5px solid $darkBlue;
     background: $ltGrey;
     overflow-x: scroll;
     margin-top: 0;
@@ -73,8 +75,10 @@ section{
 }
 .subVideo{
 	display: inline-block;
-	width: 400px;
-	height: 200px;
+	    width: 378px;
+    height: 216px;
+	z-index: 2;
+	padding: 0;
 }
 
 

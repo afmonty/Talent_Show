@@ -58,10 +58,12 @@
 	margin-bottom: 1.5em;
 }
 .sub_video{
-	border: 1px solid black;
+	border: 8px ridge $darkBlue;
 	display: block;
 	margin: 0 auto;
 	background: $mdGrey;
+	height: 300px;
+    width: 534px;
     // @media only screen and (device-width: 900px){
     //    video{
     //    	width: 400px;

@@ -12,7 +12,7 @@ const SubmissionItemTalent = React.createClass({
 			<h3 className = "talentsubTitle" onClick = {this.goDetails} >{this.props.title}</h3>
 			<h4 className = "talentsubSchool">{this.props.school}</h4>
 			<div className = 'talentsubDetailsContainer' style = {{display: 'none'}}>
-				<video  className = 'talentdetailssubVideo' src={this.props.url} width="400" height="200" controls></video>
+				<video  className = 'talentdetailssubVideo' src={this.props.url} controls></video>
 				<p className = 'talentsubdescription'>{this.props.desc}</p>
 			</div>
 			<span style = {{display: 'none'}} className = 'subid'>{this.props.submissionId}</span>
